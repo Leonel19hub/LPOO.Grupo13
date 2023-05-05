@@ -1,0 +1,8 @@
+C:\Users\GAMING\Desktop\Trabajo Practico N°2 - LPOO\LPOOI_GRUPO_13\ClasesBase\bin\Debug\optica.mdf
+C:\Users\GAMING\Desktop\Trabajo Practico N°2 - LPOO\LPOOI_GRUPO_13\ClasesBase\bin\Debug\optica_log.ldf
+C:\Users\GAMING\Desktop\Trabajo Practico N°2 - LPOO\LPOOI_GRUPO_13\ClasesBase\bin\Debug\ClasesBase.dll.config
+C:\Users\GAMING\Desktop\Trabajo Practico N°2 - LPOO\LPOOI_GRUPO_13\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\GAMING\Desktop\Trabajo Practico N°2 - LPOO\LPOOI_GRUPO_13\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\GAMING\Desktop\Trabajo Practico N°2 - LPOO\LPOOI_GRUPO_13\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\GAMING\Desktop\Trabajo Practico N°2 - LPOO\LPOOI_GRUPO_13\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\GAMING\Desktop\Trabajo Practico N°2 - LPOO\LPOOI_GRUPO_13\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
