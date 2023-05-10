@@ -38,6 +38,10 @@ namespace Vistas
             
         }
 
+        private void load_usuarios_sp(){
+            dataGridUser.DataSource = TrabajarUsuario.exec_listar_usuarios_sp();
+        }
+
         private void dataGridUser_CurrentCellChanged(object sender, EventArgs e)
         {   
             if(dataGridUser.SelectedRows.Count > 0){
@@ -70,7 +74,8 @@ namespace Vistas
         private void AltaUsuario_Load(object sender, EventArgs e)
         {
             load_combo_roles();
-            load_usuarios();
+            //load_usuarios();
+            load_usuarios_sp();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
