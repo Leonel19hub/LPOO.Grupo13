@@ -25,25 +25,58 @@ namespace Vistas
             InitializeComponent();
         }
 
-
-        public static DataTable listar_usuarios()
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
-            SqlDataAdapter da;
-            SqlCommand cmd = new SqlCommand();
-            da = new SqlDataAdapter("select Usu_ID as 'ID', Usu_NombreUsuario as 'Username', Usu_Contraseña as 'Password', Usu_ApellidoNombre as 'Nombre y apellido',Rol_Descripcion as 'Rol' from Usuario LEFT JOIN Roles on Usuario.Rol_Codigo=Roles.Rol_Codigo", cnn);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
+            cnn.Open();
+            string ini = "SELECT Usu_NombreUsuario FROM Usuario WHERE (Usu_NombreUsuario=@username AND Usu_Contraseña=@password)";
+            SqlCommand cmd = new SqlCommand(ini, cnn);
+            DataTable list_users = TrabajarUsuario.listar_usuarios();
+            cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+            cmd.Parameters.AddWithValue("@password", txtPassword.Text);
 
-            // Llena los datos de la consulta en el DataTable
-            DataTable dt = new DataTable();
-
-            da.Fill(dt);
-
-            return dt;
+            if (cmd.ExecuteScalar() != null)
+            {
+                MessageBox.Show("Bienvenido " + txtUsername.Text, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                foreach (DataRow fila in list_users.Rows)
+                {
+                    if (fila["Username"].ToString() == txtUsername.Text && fila["Password"].ToString() == txtPassword.Text)
+                    {
+                        nombreApellido = fila["Nombre y Apellido"].ToString();
+                        IdOperador = fila["ID"].ToString();
+                        if (fila["Rol"].ToString() == "Administrador")
+                        {
+                            acceso = fila["Rol"].ToString();
+                        }
+                        else
+                        {
+                            if (fila["Rol"].ToString() == "Operador")
+                            {
+                                acceso = fila["Rol"].ToString();
+                            }
+                            else
+                            {
+                                if (fila["Rol"].ToString() == "Auditor")
+                                {
+                                    acceso = fila["Rol"].ToString();
+                                }
+                            }
+                        }
+                    }
+                }
+                FormPrincipal oFrmPrincipal = new FormPrincipal();
+                this.Hide();
+                oFrmPrincipal.Show();
+                //oFrmPrincipal.ShowDialog();
+                //this.Close();
+            }
+            else {
+                MessageBox.Show("Usuario Invalido","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            cnn.Close();
         }
 
-        private void btnLogin_Click_1(object sender, EventArgs e) {
+        /*private void btnLogin_Click_1(object sender, EventArgs e) {
             Boolean foundUser = false;
 
             Usuario uAdministrador = new Usuario("Admin", "admin", "1");
@@ -75,7 +108,9 @@ namespace Vistas
             }
 
       
-        }
+        }*/
+
+
 
     }
 }

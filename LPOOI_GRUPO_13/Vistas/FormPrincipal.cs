@@ -17,7 +17,7 @@ namespace Vistas
             InitializeComponent();
 
         }
-        public FormPrincipal(Usuario user)
+        /*public FormPrincipal(Usuario user)
         {
             InitializeComponent();
             switch(user.Rol_Codigo){
@@ -36,7 +36,7 @@ namespace Vistas
             }
 
 
-        }
+        }*/
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -79,6 +79,24 @@ namespace Vistas
             AltaObraSocial altObraSocial = new AltaObraSocial();
             altObraSocial.Show();
             this.Close();
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            String acceso = FormLogin.acceso;
+            if (acceso == "Administrador")
+            {
+                msSistInquilinos.Visible = false;
+                alquilerToolStripMenuItem.Visible = false;
+                ventasToolStripMenuItem.Visible = false;
+            }
+            else { 
+                if(acceso == "Operador"){
+                    sistemaToolStripMenuItem.Visible = false;
+                    alquilerToolStripMenuItem.Visible = false;
+                    usuarioToolStripMenuItem.Visible = false;
+                }
+            }
         }
     }
 }
