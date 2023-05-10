@@ -16,6 +16,7 @@ namespace Vistas
         public AltaProducto()
         {
             InitializeComponent();
+            load_productos();
         }
 
         private void btnAtrasProd_Click(object sender, EventArgs e)
@@ -31,6 +32,7 @@ namespace Vistas
             {
                 Producto oProducto = new Producto();
                 oProducto.Prod_Codigo = txtCodProd.Text;
+                oProducto.Prod_Nombre = txtNombre.Text;
                 oProducto.Prod_Categoria = txtCatProd.Text;
                 oProducto.Prod_Descripcion= txtDes.Text;
                 oProducto.Prod_Precio = decimal.Parse(txtPrecioProd.Text);
@@ -43,6 +45,7 @@ namespace Vistas
         {
             dataGridProducto.DataSource = TrabajarProducto.listar_productos();
             txtCodProd.Text = "";
+            txtNombre.Text = "";
             txtCatProd.Text = "";
             txtDes.Text = "";
             txtPrecioProd.Text = "";
@@ -53,6 +56,7 @@ namespace Vistas
             if (dataGridProducto.SelectedRows.Count > 0)
             {
                 txtCodProd.Text = dataGridProducto.CurrentRow.Cells["Codifo"].Value.ToString();
+                txtNombre.Text = dataGridProducto.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtCatProd.Text = dataGridProducto.CurrentRow.Cells["Categoria"].Value.ToString();
                 txtDes.Text = dataGridProducto.CurrentRow.Cells["Descripcion"].Value.ToString();
                 txtPrecioProd.Text = dataGridProducto.CurrentRow.Cells["Precio"].Value.ToString();

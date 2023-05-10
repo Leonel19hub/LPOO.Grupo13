@@ -35,5 +35,13 @@ namespace ClasesBase
             get { return prod_Precio; }
             set { prod_Precio = value; }
         }
+
+        private string prod_Nombre;
+
+        public string Prod_Nombre
+        {
+            get { return prod_Nombre; }
+            set { prod_Nombre = value; }
+        }
     }
 }

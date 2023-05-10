@@ -16,6 +16,7 @@ namespace Vistas
         public AltaObraSocial()
         {
             InitializeComponent();
+            load_obraSocial();
         }
 
         private void lblDirObraSocial_Click(object sender, EventArgs e)

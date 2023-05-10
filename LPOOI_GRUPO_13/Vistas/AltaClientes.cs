@@ -17,9 +17,10 @@ namespace Vistas
         public AltaClientes()
         {
             InitializeComponent();
+            load_clientes();
         }
 
-        private void FrmClientes_Load(object sender, EventArgs e)
+        private void AltaClientes_Load(object sender, EventArgs e)
         {
             load_clientes();
         }
@@ -33,24 +34,6 @@ namespace Vistas
             txtDir.Text = "";
             textCuit.Text = "";
             textNroCarnet.Text = "";
-        }
-
-        private void dataGridCliente_CurrentCellChanged(object sender, EventArgs e)
-        {
-
-            if (dataGridCliente.SelectedRows.Count > 0)
-            {
-                txtDni.Text = dataGridCliente.CurrentRow.Cells["Dni"].Value.ToString();
-                txtApellido.Text = dataGridCliente.CurrentRow.Cells["Apellido"].Value.ToString();
-                txtNombre.Text = dataGridCliente.CurrentRow.Cells["Nombre"].Value.ToString();
-                txtDir.Text = dataGridCliente.CurrentRow.Cells["Direccion"].Value.ToString();
-                textCuit.Text = dataGridCliente.CurrentRow.Cells["Cuit"].Value.ToString();
-                textNroCarnet.Text = dataGridCliente.CurrentRow.Cells["N° Carnet"].Value.ToString();
-                btnModificar.Enabled = false;
-
-            }
-            else
-                btnModificar.Enabled = true;
         }
 
         private void btnEnviar_Click_1(object sender, EventArgs e)
@@ -69,6 +52,28 @@ namespace Vistas
                 load_clientes();
             }
 
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            dataGridCliente.DataSource = TrabajarCliente.eliminar_cliente(txtDni.Text);
+            load_clientes();
+        }
+
+        private void dataGridCliente_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (dataGridCliente.SelectedRows.Count > 0){
+                txtDni.Text = dataGridCliente.CurrentRow.Cells["Dni"].Value.ToString();
+                txtApellido.Text = dataGridCliente.CurrentRow.Cells["Apellido"].Value.ToString();
+                txtNombre.Text = dataGridCliente.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtDir.Text = dataGridCliente.CurrentRow.Cells["Direccion"].Value.ToString();
+                textCuit.Text = dataGridCliente.CurrentRow.Cells["Cuit"].Value.ToString();
+                textNroCarnet.Text = dataGridCliente.CurrentRow.Cells["N° Carnet"].Value.ToString();
+                btnEnviar.Enabled = false;
+
+            }
+            else
+                btnEnviar.Enabled = true;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -99,11 +104,8 @@ namespace Vistas
             fPrincipal.Show();
         }
 
-        private void btnBorrar_Click(object sender, EventArgs e)
-        {
-            dataGridCliente.DataSource = TrabajarCliente.eliminar_cliente(txtDni.Text);
-            load_clientes();
-        }
+        
 
+        
     }
 }

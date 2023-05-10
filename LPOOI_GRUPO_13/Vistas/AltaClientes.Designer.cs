@@ -172,6 +172,7 @@
             this.dataGridCliente.RowTemplate.Height = 24;
             this.dataGridCliente.Size = new System.Drawing.Size(671, 407);
             this.dataGridCliente.TabIndex = 12;
+            //this.dataGridCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCliente_CellContentClick);
             // 
             // lblBuscar
             // 
@@ -282,6 +283,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AltaClientes";
             this.Text = "AltaClientes";
+            this.Load += new System.EventHandler(this.AltaClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

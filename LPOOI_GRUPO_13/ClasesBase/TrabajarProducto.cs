@@ -15,7 +15,7 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT INTO Producto(Prod_Codigo, Prod_Categoria, Prod_Descripcion, Prod_Precio) values(@cod,@cat,@des,@precio)";
+            cmd.CommandText = "INSERT INTO Producto(Prod_Codigo, Prod_Categoria, Prod_Descripcion, Prod_Precio, Prod_Nombre) values(@cod,@cat,@des,@precio,@nombre)";
 
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
@@ -24,6 +24,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@cat", oProducto.Prod_Categoria);
             cmd.Parameters.AddWithValue("@des", oProducto.Prod_Descripcion);
             cmd.Parameters.AddWithValue("@precio", oProducto.Prod_Precio);
+            cmd.Parameters.AddWithValue("@nombre", oProducto.Prod_Nombre);
             cnn.Open();
             cmd.ExecuteNonQuery();
 
@@ -34,7 +35,7 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlDataAdapter da;
             SqlCommand cmd = new SqlCommand();
-            da = new SqlDataAdapter("select Prod_Codigo as 'Codigo', Prod_Categoria as 'Categoria', Prod_Descripcion as 'Descripcion', Prod_Precio as 'Precio' FROM Producto", cnn);
+            da = new SqlDataAdapter("select Prod_Codigo as 'Codigo', Prod_Categoria as 'Categoria', Prod_Descripcion as 'Descripcion', Prod_Precio as 'Precio', Prod_Nombre as 'Nombre' FROM Producto", cnn);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 

@@ -40,13 +40,15 @@
             this.btnAtrasProd = new System.Windows.Forms.Button();
             this.dataGridProducto = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodProd
             // 
             this.lblCodProd.AutoSize = true;
-            this.lblCodProd.Location = new System.Drawing.Point(57, 184);
+            this.lblCodProd.Location = new System.Drawing.Point(57, 147);
             this.lblCodProd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodProd.Name = "lblCodProd";
             this.lblCodProd.Size = new System.Drawing.Size(60, 17);
@@ -85,7 +87,7 @@
             // 
             // txtCodProd
             // 
-            this.txtCodProd.Location = new System.Drawing.Point(177, 181);
+            this.txtCodProd.Location = new System.Drawing.Point(177, 144);
             this.txtCodProd.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodProd.Name = "txtCodProd";
             this.txtCodProd.Size = new System.Drawing.Size(132, 22);
@@ -97,7 +99,7 @@
             this.txtCatProd.Margin = new System.Windows.Forms.Padding(4);
             this.txtCatProd.Name = "txtCatProd";
             this.txtCatProd.Size = new System.Drawing.Size(132, 22);
-            this.txtCatProd.TabIndex = 2;
+            this.txtCatProd.TabIndex = 3;
             // 
             // txtDes
             // 
@@ -105,7 +107,7 @@
             this.txtDes.Margin = new System.Windows.Forms.Padding(4);
             this.txtDes.Name = "txtDes";
             this.txtDes.Size = new System.Drawing.Size(132, 22);
-            this.txtDes.TabIndex = 1;
+            this.txtDes.TabIndex = 2;
             // 
             // txtPrecioProd
             // 
@@ -113,7 +115,7 @@
             this.txtPrecioProd.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecioProd.Name = "txtPrecioProd";
             this.txtPrecioProd.Size = new System.Drawing.Size(132, 22);
-            this.txtPrecioProd.TabIndex = 3;
+            this.txtPrecioProd.TabIndex = 4;
             // 
             // btnAceptarProd
             // 
@@ -121,7 +123,7 @@
             this.btnAceptarProd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptarProd.Name = "btnAceptarProd";
             this.btnAceptarProd.Size = new System.Drawing.Size(100, 28);
-            this.btnAceptarProd.TabIndex = 4;
+            this.btnAceptarProd.TabIndex = 5;
             this.btnAceptarProd.Text = "Aceptar";
             this.btnAceptarProd.UseVisualStyleBackColor = true;
             this.btnAceptarProd.Click += new System.EventHandler(this.btnAceptarProd_Click);
@@ -132,7 +134,7 @@
             this.btnAtrasProd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtrasProd.Name = "btnAtrasProd";
             this.btnAtrasProd.Size = new System.Drawing.Size(100, 28);
-            this.btnAtrasProd.TabIndex = 5;
+            this.btnAtrasProd.TabIndex = 6;
             this.btnAtrasProd.Text = "Atras";
             this.btnAtrasProd.UseVisualStyleBackColor = true;
             this.btnAtrasProd.Click += new System.EventHandler(this.btnAtrasProd_Click);
@@ -158,11 +160,31 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Registrar Producto";
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(177, 193);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(132, 22);
+            this.txtNombre.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(57, 196);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Nombre: ";
+            // 
             // AltaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1160, 533);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridProducto);
             this.Controls.Add(this.btnAtrasProd);
@@ -198,5 +220,7 @@
         private System.Windows.Forms.Button btnAtrasProd;
         private System.Windows.Forms.DataGridView dataGridProducto;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label2;
     }
 }

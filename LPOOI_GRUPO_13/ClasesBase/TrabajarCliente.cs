@@ -17,14 +17,7 @@ namespace ClasesBase
             SqlCommand cmd = new SqlCommand();
             
             da = new SqlDataAdapter("select Cli_DNI as 'Dni', Cli_Apellido as 'Apellido', Cli_Nombre as 'Nombre', Cli_Direccion as 'Direccion',OS_CUIT as 'CUIT' FROM Cliente", cnn);
-            //
-            //cmd.CommandText = "SELECT ";
-            //cmd.CommandText += "Cli_DNI as 'DNI'";
-            //cmd.CommandText += "Cli_Apellido as 'Apellido'";
-            //cmd.CommandText += "Cli_Nombre as 'Nombre'";
-            //cmd.CommandText += "Cli_Direccion as 'Direccion'";
-            //cmd.CommandText += "OS_CUIT as 'CUIT'";
-            //cmd.CommandText += "Cli_NroCarnet as 'N° Carnet'";
+            
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
