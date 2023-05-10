@@ -73,14 +73,6 @@ namespace Vistas
             load_usuarios();
         }
 
-
-
-
-
-
-
-
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Usuario user = new Usuario();
