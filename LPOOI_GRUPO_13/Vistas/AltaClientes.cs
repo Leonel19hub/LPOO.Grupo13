@@ -28,6 +28,7 @@ namespace Vistas
         private void load_clientes()
         {
             dataGridCliente.DataSource = TrabajarCliente.listar_clientes();
+  
             txtDni.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
@@ -102,6 +103,17 @@ namespace Vistas
             FormPrincipal fPrincipal = new FormPrincipal();
             this.Close();
             fPrincipal.Show();
+        }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            dataGridCliente.DataSource = TrabajarCliente.listar_clientes_ordenados_sp();
+            txtDni.Text = "";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtDir.Text = "";
+            textCuit.Text = "";
+            textNroCarnet.Text = "";
         }
 
         

@@ -49,6 +49,7 @@
             this.volver = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDir = new System.Windows.Forms.TextBox();
+            this.btnOrdenar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,7 +145,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(143, 443);
+            this.btnModificar.Location = new System.Drawing.Point(37, 504);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 28);
@@ -155,7 +156,7 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(11, 443);
+            this.btnEnviar.Location = new System.Drawing.Point(37, 443);
             this.btnEnviar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(100, 28);
@@ -170,15 +171,14 @@
             this.dataGridCliente.Location = new System.Drawing.Point(420, 64);
             this.dataGridCliente.Name = "dataGridCliente";
             this.dataGridCliente.RowTemplate.Height = 24;
-            this.dataGridCliente.Size = new System.Drawing.Size(671, 407);
+            this.dataGridCliente.Size = new System.Drawing.Size(677, 468);
             this.dataGridCliente.TabIndex = 12;
-            //this.dataGridCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCliente_CellContentClick);
             // 
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
             this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.Location = new System.Drawing.Point(47, 523);
+            this.lblBuscar.Location = new System.Drawing.Point(47, 566);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(86, 26);
             this.lblBuscar.TabIndex = 18;
@@ -187,7 +187,7 @@
             // txtBuscarCli
             // 
             this.txtBuscarCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarCli.Location = new System.Drawing.Point(189, 523);
+            this.txtBuscarCli.Location = new System.Drawing.Point(189, 566);
             this.txtBuscarCli.Name = "txtBuscarCli";
             this.txtBuscarCli.Size = new System.Drawing.Size(450, 26);
             this.txtBuscarCli.TabIndex = 10;
@@ -196,7 +196,7 @@
             // 
             this.btnBuscarCli.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnBuscarCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCli.Location = new System.Drawing.Point(674, 514);
+            this.btnBuscarCli.Location = new System.Drawing.Point(715, 557);
             this.btnBuscarCli.Name = "btnBuscarCli";
             this.btnBuscarCli.Size = new System.Drawing.Size(158, 46);
             this.btnBuscarCli.TabIndex = 11;
@@ -206,7 +206,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(274, 443);
+            this.btnBorrar.Location = new System.Drawing.Point(230, 443);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(100, 28);
@@ -228,7 +228,7 @@
             // 
             // volver
             // 
-            this.volver.Location = new System.Drawing.Point(952, 525);
+            this.volver.Location = new System.Drawing.Point(976, 557);
             this.volver.Name = "volver";
             this.volver.Size = new System.Drawing.Size(121, 34);
             this.volver.TabIndex = 12;
@@ -254,11 +254,23 @@
             this.txtDir.Size = new System.Drawing.Size(217, 22);
             this.txtDir.TabIndex = 4;
             // 
+            // btnOrdenar
+            // 
+            this.btnOrdenar.Location = new System.Drawing.Point(230, 504);
+            this.btnOrdenar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOrdenar.Name = "btnOrdenar";
+            this.btnOrdenar.Size = new System.Drawing.Size(100, 28);
+            this.btnOrdenar.TabIndex = 25;
+            this.btnOrdenar.Text = "Ordenar";
+            this.btnOrdenar.UseVisualStyleBackColor = true;
+            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
+            // 
             // AltaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 614);
+            this.ClientSize = new System.Drawing.Size(1137, 624);
+            this.Controls.Add(this.btnOrdenar);
             this.Controls.Add(this.txtDir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.volver);
@@ -313,5 +325,6 @@
         private System.Windows.Forms.Button volver;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDir;
+        private System.Windows.Forms.Button btnOrdenar;
     }
 }

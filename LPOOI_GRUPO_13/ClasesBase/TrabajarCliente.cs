@@ -30,6 +30,24 @@ namespace ClasesBase
             return dt;
         }
 
+        public static DataTable listar_clientes_ordenados_sp() {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "ordernar_clientes_apellido";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+
+        }
+
         public static void insertar_cliente(Cliente oCliente)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);

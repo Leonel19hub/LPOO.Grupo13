@@ -47,5 +47,71 @@ namespace ClasesBase
             return dt;
         }
 
+        public static DataTable listar_productos_categoria_sp()
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "ordenar_producto_categoria";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            return dt;
+
+        }
+
+        public static DataTable listar_productos_descripcion_sp()
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "ordernar_producto_descripcion";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+            return dt;
+        }
+
+        public static DataTable eliminar_producto(string codigo) {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            cnn.Open();
+            SqlCommand cmd = cnn.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM Producto WHERE Prod_Codigo='"+codigo+"'";
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+            //LLENAR LOS DATOS DE CONSULTA EN EL DATATABLE
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+
+        public static DataTable eliminar_producto_sp(string codigo) {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            cnn.Open();
+            SqlCommand cmd = cnn.CreateCommand();
+            cmd.CommandText = "borrar_producto_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            //Parametro de entrada
+            cmd.Parameters.AddWithValue("@codigo", codigo);
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
     }
 }
