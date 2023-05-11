@@ -34,6 +34,8 @@
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alquilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprasDeClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprasDeClienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSalir = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -84,10 +86,27 @@
             // 
             // ventasToolStripMenuItem
             // 
+            this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.comprasDeClienteToolStripMenuItem,
+            this.comprasDeClienteToolStripMenuItem1});
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
+            // comprasDeClienteToolStripMenuItem
+            // 
+            this.comprasDeClienteToolStripMenuItem.Name = "comprasDeClienteToolStripMenuItem";
+            this.comprasDeClienteToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.comprasDeClienteToolStripMenuItem.Text = "Alta Venta";
+            this.comprasDeClienteToolStripMenuItem.Click += new System.EventHandler(this.comprasDeClienteToolStripMenuItem_Click);
+            // 
+            // comprasDeClienteToolStripMenuItem1
+            // 
+            this.comprasDeClienteToolStripMenuItem1.Name = "comprasDeClienteToolStripMenuItem1";
+            this.comprasDeClienteToolStripMenuItem1.Size = new System.Drawing.Size(208, 24);
+            this.comprasDeClienteToolStripMenuItem1.Text = "Compras de Cliente";
+            this.comprasDeClienteToolStripMenuItem1.Click += new System.EventHandler(this.comprasDeClienteToolStripMenuItem1_Click);
             // 
             // usuarioToolStripMenuItem
             // 
@@ -135,5 +154,7 @@
         private System.Windows.Forms.ToolStripMenuItem principalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ToolStripMenuItem comprasDeClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem comprasDeClienteToolStripMenuItem1;
     }
 }

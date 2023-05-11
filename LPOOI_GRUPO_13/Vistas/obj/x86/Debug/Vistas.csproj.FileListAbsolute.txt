@@ -113,3 +113,4 @@ C:\Users\GAMING\Desktop\LPOO1\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.Listado
 C:\Users\GAMING\Desktop\LPOO1\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
 C:\Users\GAMING\Desktop\LPOO1\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.RegistrarVentas.resources
 C:\Users\GAMING\Desktop\LPOO1\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\GAMING\Desktop\LPOO1\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmListarCompra.resources

@@ -55,9 +55,7 @@ namespace Vistas
 
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistrarVentas frmVenta = new RegistrarVentas();
-            frmVenta.Show();
-            this.Close();
+            
         }
 
         private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,5 +96,20 @@ namespace Vistas
                 }
             }
         }
+
+        private void comprasDeClienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmListarCompra frmCompras = new FrmListarCompra();
+            frmCompras.Show();
+            this.Close();
+        }
+
+        private void comprasDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarVentas frmVenta = new RegistrarVentas();
+            frmVenta.Show();
+            this.Close();
+        }
+
     }
 }

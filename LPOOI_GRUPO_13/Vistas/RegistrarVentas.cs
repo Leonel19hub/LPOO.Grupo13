@@ -16,6 +16,19 @@ namespace Vistas
         public RegistrarVentas()
         {
             InitializeComponent();
+            load_factura();
+        }
+
+        public void load_factura() {
+            dataGridProductos.DataSource = TrabajarVenta.listar_det_venta();
+            dataGridView1.DataSource = TrabajarVenta.listar_ventas();
+        }
+
+        public void load_nro_venta() {
+            cmdNroVenta.SelectedIndex = -1;
+            cmdNroVenta.DisplayMember = "NRO";
+            cmdNroVenta.ValueMember = "Ven_Nro";
+            cmdNroVenta.DataSource = TrabajarVenta.list_nro_ventas();
         }
         
         public void load_combo_clientes()
@@ -29,7 +42,7 @@ namespace Vistas
         public void load_combo_productos() {
             cmdProducto.SelectedIndex = -1;
             cmdProducto.DisplayMember = "PRODUCTO";
-            cmdProducto.ValueMember = "Prod_Nombre";
+            cmdProducto.ValueMember = "Prod_Codigo";
             cmdProducto.DataSource = TrabajarVenta.listar_productos();
         }
 
@@ -37,12 +50,9 @@ namespace Vistas
         {
             load_combo_clientes();
             load_combo_productos();
-        }
+            load_nro_venta();
 
-        /*private void groupBox1_Enter(object sender, EventArgs e)
-        {
-            load_combo_clientes();
-        }*/
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -55,21 +65,16 @@ namespace Vistas
             dataGridView1.DataSource = TrabajarVenta.listar_ventas();
         }
 
+        private void listar_det_ventas() {
+            dataGridProductos.DataSource = TrabajarVenta.listar_det_venta();
+        }
+
         private void btnGenerarFactura_Click(object sender, EventArgs e)
         {
             Venta oVenta = new Venta();
             oVenta.Ven_Fecha = dateVenta.Value;
             oVenta.Cli_Dni = cmbRegistVCli.SelectedValue.ToString();
-
-            VentaDetalle oDetVenta = new VentaDetalle();
-            oDetVenta.Det_Nro = oVenta.Ven_Nro;
-            oDetVenta.Prod_Codigo = cmdProducto.SelectedValue.ToString();
-            oDetVenta.Det_Precio = Convert.ToDecimal(textBoxPrecio.Text);
-            oDetVenta.Det_Cantidad = Convert.ToDecimal(textBoxCantidad.Text);
-            oDetVenta.Det_Total = Convert.ToDecimal(textBoxCantidad.Text) * Convert.ToDecimal(textBoxPrecio.Text);
-
-            TrabajarVenta.insertar_det_venta(oDetVenta);
-            TrabajarVenta.insertar_venta(oVenta);
+            TrabajarVenta.insertar_venta(oVenta);  
             listar_ventas();
         }
 
@@ -78,5 +83,17 @@ namespace Vistas
 
         }
 
+        private void btnCargarProducto_Click(object sender, EventArgs e)
+        {
+            VentaDetalle oDetVenta = new VentaDetalle();
+            oDetVenta.Ven_Nro = int.Parse(cmdNroVenta.SelectedValue.ToString());
+            oDetVenta.Prod_Codigo = cmdProducto.SelectedValue.ToString();
+            oDetVenta.Det_Precio = Convert.ToDecimal(textBoxPrecio.Text);
+            oDetVenta.Det_Cantidad = Convert.ToDecimal(textBoxCantidad.Text);
+            oDetVenta.Det_Total = Convert.ToDecimal(textBoxCantidad.Text) * Convert.ToDecimal(textBoxPrecio.Text);
+
+            TrabajarVenta.insertar_det_venta(oDetVenta);
+            listar_det_ventas();
+        }
     }
 }
