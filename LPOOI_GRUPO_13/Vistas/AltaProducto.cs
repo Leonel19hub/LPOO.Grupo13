@@ -66,5 +66,25 @@ namespace Vistas
             else
                 btnAceptarProd.Enabled = true;
         }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            if (radioCategoria.Checked)
+            {
+                dataGridProducto.DataSource = TrabajarProducto.listar_productos_categoria_sp();
+            }
+            else {
+                if (radioDescripcion.Checked) {
+                    dataGridProducto.DataSource = TrabajarProducto.listar_productos_descripcion_sp();
+                }
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            dataGridProducto.DataSource = TrabajarProducto.eliminar_producto_sp(txtCodProd.Text);
+            //dataGridProducto.DataSource = TrabajarProducto.eliminar_producto(txtCodProd.Text);
+            load_productos();
+        }
     }
 }
