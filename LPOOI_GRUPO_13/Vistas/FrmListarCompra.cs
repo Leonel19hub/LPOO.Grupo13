@@ -47,7 +47,7 @@ namespace Vistas
         }
 
         public void load_listar_ventas_entre_fechas() {
-            dataGridFecha.DataSource = TrabajarVenta.listar_ventas_entre_fechas_sp(dtFechaInicio.Value,dtFechaFinal.Value);
+            dataCompras.DataSource = TrabajarVenta.listar_ventas_entre_fechas_sp(dtFechaInicio.Value,dtFechaFinal.Value);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -60,26 +60,6 @@ namespace Vistas
         {
             TrabajarVenta.listar_ventas_entre_fechas_sp(dtFechaInicio.Value, dtFechaFinal.Value);
             load_listar_ventas_entre_fechas();
-        }
-
-        private void dtFechaInicio_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtFechaFinal_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

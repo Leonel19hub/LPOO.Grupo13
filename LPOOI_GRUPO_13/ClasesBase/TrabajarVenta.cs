@@ -26,6 +26,32 @@ namespace ClasesBase
 
         }
 
+        public static decimal obtener_precio(string codigo) {
+            decimal prod_precio;
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "obtener_precio_producto_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@codigo", codigo);
+
+            cmd.Parameters.Add("@precioFinal",SqlDbType.Decimal);
+            cmd.Parameters["@precioFinal"].Direction = ParameterDirection.Output;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+
+            prod_precio = (decimal)cmd.Parameters["@precioFinal"].Value;
+
+            return prod_precio;
+        }
+
         public static DataTable list_nro_ventas() {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();

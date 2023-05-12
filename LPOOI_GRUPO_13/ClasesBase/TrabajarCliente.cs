@@ -61,9 +61,9 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@dni", oCliente.Cli_Dni);
             cmd.Parameters.AddWithValue("@nombre", oCliente.Cli_Nombre);
             cmd.Parameters.AddWithValue("@apellido", oCliente.Cli_Apellido);
-            cmd.Parameters.AddWithValue("@direccion", oCliente.Cli_Apellido);
-            cmd.Parameters.AddWithValue("@cuit", oCliente.Cli_Apellido);
-            cmd.Parameters.AddWithValue("@carnet", oCliente.Cli_Apellido);
+            cmd.Parameters.AddWithValue("@direccion", oCliente.Cli_Direccion);
+            cmd.Parameters.AddWithValue("@cuit", oCliente.Os_Cuit);
+            cmd.Parameters.AddWithValue("@carnet", oCliente.Cli_NroCarnet);
 
             cnn.Open();
             cmd.ExecuteNonQuery();

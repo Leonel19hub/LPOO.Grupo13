@@ -76,6 +76,7 @@ namespace Vistas
             oVenta.Cli_Dni = cmbRegistVCli.SelectedValue.ToString();
             TrabajarVenta.insertar_venta(oVenta);  
             listar_ventas();
+            load_nro_venta();
         }
 
         private void dataGridView1_CurrentCellChanged(object sender, DataGridViewCellEventArgs e)

@@ -10,19 +10,20 @@ namespace ClasesBase
 {
     public class TrabajarProducto
     {
+        //Agregar Producto a la BD con Stored Procedure
         public static void insertar_producto(Producto oProducto)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT INTO Producto(Prod_Codigo, Prod_Categoria, Prod_Descripcion, Prod_Precio, Prod_Nombre) values(@cod,@cat,@des,@precio,@nombre)";
-
-            cmd.CommandType = CommandType.Text;
+            
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
+            cmd.CommandText = "agregar_producto_sp";
 
-            cmd.Parameters.AddWithValue("@cod", oProducto.Prod_Codigo);
-            cmd.Parameters.AddWithValue("@cat", oProducto.Prod_Categoria);
-            cmd.Parameters.AddWithValue("@des", oProducto.Prod_Descripcion);
+            cmd.Parameters.AddWithValue("@codigo", oProducto.Prod_Codigo);
+            cmd.Parameters.AddWithValue("@categoria", oProducto.Prod_Categoria);
+            cmd.Parameters.AddWithValue("@descripcion", oProducto.Prod_Descripcion);
             cmd.Parameters.AddWithValue("@precio", oProducto.Prod_Precio);
             cmd.Parameters.AddWithValue("@nombre", oProducto.Prod_Nombre);
             cnn.Open();
@@ -146,6 +147,31 @@ namespace ClasesBase
 
             cmd.Parameters.AddWithValue("@fechaInicio", fechaInicio);
             cmd.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            cnn.Open();
+            da.Fill(dt);
+            cnn.Close();
+
+            return dt;
+        }
+
+        public static DataTable modeificar_producto_sp(Producto oProducto) {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "modificar_producto_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@codigo", oProducto.Prod_Codigo);
+            cmd.Parameters.AddWithValue("@nombre", oProducto.Prod_Nombre);
+            cmd.Parameters.AddWithValue("@descripcion", oProducto.Prod_Descripcion);
+            cmd.Parameters.AddWithValue("@categoria", oProducto.Prod_Categoria);
+            cmd.Parameters.AddWithValue("@precio", oProducto.Prod_Precio);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 

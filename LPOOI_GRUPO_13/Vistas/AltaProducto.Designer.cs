@@ -47,6 +47,7 @@
             this.radioCategoria = new System.Windows.Forms.RadioButton();
             this.btnOrdenar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,7 +125,7 @@
             // 
             // btnAceptarProd
             // 
-            this.btnAceptarProd.Location = new System.Drawing.Point(269, 443);
+            this.btnAceptarProd.Location = new System.Drawing.Point(38, 407);
             this.btnAceptarProd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptarProd.Name = "btnAceptarProd";
             this.btnAceptarProd.Size = new System.Drawing.Size(100, 28);
@@ -135,7 +136,7 @@
             // 
             // btnAtrasProd
             // 
-            this.btnAtrasProd.Location = new System.Drawing.Point(28, 443);
+            this.btnAtrasProd.Location = new System.Drawing.Point(28, 479);
             this.btnAtrasProd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtrasProd.Name = "btnAtrasProd";
             this.btnAtrasProd.Size = new System.Drawing.Size(100, 28);
@@ -152,7 +153,7 @@
             this.dataGridProducto.RowTemplate.Height = 24;
             this.dataGridProducto.Size = new System.Drawing.Size(734, 377);
             this.dataGridProducto.TabIndex = 6;
-            this.dataGridProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProducto_CellContentClick);
+            this.dataGridProducto.CurrentCellChanged += new System.EventHandler(this.dataGridProducto_CurrentCellChanged);
             // 
             // label1
             // 
@@ -226,7 +227,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(149, 443);
+            this.btnBorrar.Location = new System.Drawing.Point(254, 407);
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(100, 28);
@@ -235,11 +236,22 @@
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(147, 407);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(100, 28);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // AltaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1160, 533);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnOrdenar);
             this.Controls.Add(this.radioCategoria);
@@ -289,5 +301,6 @@
         private System.Windows.Forms.RadioButton radioCategoria;
         private System.Windows.Forms.Button btnOrdenar;
         private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

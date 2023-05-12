@@ -30,7 +30,7 @@ namespace Vistas
         }
 
         private void load_producto_entre_fechas_sp() {
-            dtGridProdFechas.DataSource = TrabajarProducto.listar_productos_entre_fechas_sp(dtProdFechaInicio.Value, dtProdFechaFinal.Value);
+            dtGridProdCliente.DataSource = TrabajarProducto.listar_productos_entre_fechas_sp(dtProdFechaInicio.Value, dtProdFechaFinal.Value);
         }
 
         private void btnAtrasProd_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace Vistas
 
         private void btnBuscarProdFechas_Click(object sender, EventArgs e)
         {
-            dtGridProdFechas.DataSource = TrabajarProducto.listar_productos_entre_fechas_sp(dtProdFechaInicio.Value,dtProdFechaFinal.Value);
+            dtGridProdCliente.DataSource = TrabajarProducto.listar_productos_entre_fechas_sp(dtProdFechaInicio.Value,dtProdFechaFinal.Value);
             load_producto_entre_fechas_sp();
         }
     }
