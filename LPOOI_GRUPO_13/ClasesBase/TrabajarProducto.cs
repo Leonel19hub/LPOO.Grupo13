@@ -113,5 +113,48 @@ namespace ClasesBase
             da.Fill(dt);
             return dt;
         }
+
+        public static DataTable listar_productos_x_cliente_sp(string cliDni) {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "listar_productos_x_cliente";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@cliDni", cliDni);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            cnn.Open();
+            da.Fill(dt);
+            cnn.Close();
+
+            return dt;
+        }
+
+        public static DataTable listar_productos_entre_fechas_sp(DateTime fechaInicio, DateTime fechaFinal) {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "listar_productos_entre_fechas_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+            cmd.Parameters.AddWithValue("@fechaFinal", fechaFinal);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            cnn.Open();
+            da.Fill(dt);
+            cnn.Close();
+
+            return dt;
+        }
     }
 }

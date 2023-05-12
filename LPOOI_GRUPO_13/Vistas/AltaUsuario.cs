@@ -109,6 +109,21 @@ namespace Vistas
             load_usuarios();
         }
 
-
+        public static DataTable get_count_user_x_rol_sp(int rol_id)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            cnn.Open();
+            SqlCommand cmd = cnn.CreateCommand();
+            cmd.CommandText = "borrar_producto_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            //Parametro de entrada
+            cmd.Parameters.AddWithValue("@rol_id", rol_id);
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
     }
 }

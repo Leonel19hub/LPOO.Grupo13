@@ -22,12 +22,17 @@ namespace Vistas
 
         }
 
-        private void FrmListarCompra_Load(object sender, EventArgs e)
-        {
-            cmdClientes.SelectedIndex = -1;
+        private void load_clientes() {
+            //cmdClientes.SelectedIndex = -1;
             cmdClientes.DisplayMember = "NAME";
             cmdClientes.ValueMember = "Cli_DNI";
             cmdClientes.DataSource = TrabajarVenta.list_clientes();
+        }
+
+        private void FrmListarCompra_Load(object sender, EventArgs e)
+        {
+            load_clientes();
+            //compras_clientes_sp();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -37,8 +42,44 @@ namespace Vistas
             fPrincipal.Show();
         }
 
-        public void compras_clientes_sp() {
-            dataCompras.DataSource = TrabajarVenta.listar_compras_cliente_sp(int.Parse(cmdClientes.SelectedValue.ToString()));
+        public void load_compras_clientes_sp() {
+            dataCompras.DataSource = TrabajarVenta.listar_compras_cliente_sp(cmdClientes.SelectedValue.ToString());
+        }
+
+        public void load_listar_ventas_entre_fechas() {
+            dataGridFecha.DataSource = TrabajarVenta.listar_ventas_entre_fechas_sp(dtFechaInicio.Value,dtFechaFinal.Value);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            TrabajarVenta.listar_compras_cliente_sp(cmdClientes.SelectedValue.ToString());
+            load_compras_clientes_sp();
+        }
+
+        private void btnBuscarFechas_Click(object sender, EventArgs e)
+        {
+            TrabajarVenta.listar_ventas_entre_fechas_sp(dtFechaInicio.Value, dtFechaFinal.Value);
+            load_listar_ventas_entre_fechas();
+        }
+
+        private void dtFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtFechaFinal_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

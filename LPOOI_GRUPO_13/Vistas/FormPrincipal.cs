@@ -60,9 +60,7 @@ namespace Vistas
 
         private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AltaProducto altProductos = new AltaProducto();
-            altProductos.Show();
-            this.Close();
+            
         }
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -108,6 +106,20 @@ namespace Vistas
         {
             RegistrarVentas frmVenta = new RegistrarVentas();
             frmVenta.Show();
+            this.Close();
+        }
+
+        private void ingresarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AltaProducto altProductos = new AltaProducto();
+            altProductos.Show();
+            this.Close();
+        }
+
+        private void productosVendidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListarProductos FrmListarProductos = new FrmListarProductos();
+            FrmListarProductos.Show();
             this.Close();
         }
 

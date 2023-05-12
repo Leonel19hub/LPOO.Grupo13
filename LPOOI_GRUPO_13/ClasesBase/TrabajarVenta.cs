@@ -115,7 +115,9 @@ namespace ClasesBase
             cnn.Close();
         }
 
-        public static DataTable listar_compras_cliente_sp(int dni)
+        // Trabajo Practico N°3 - Punto 4
+
+        public static DataTable listar_compras_cliente_sp(string dni)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
@@ -136,5 +138,30 @@ namespace ClasesBase
  
             return dt;
         }
+
+        // Trabajo Practico N°3 - Punto 5
+
+        public static DataTable listar_ventas_entre_fechas_sp(DateTime fechaInicio, DateTime fechaFinal) {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "listar_ventas_entre_fechas";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+            cmd.Parameters.AddWithValue("@fechaFinal",fechaFinal);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            cnn.Open();
+            da.Fill(dt);
+            cnn.Close();
+
+            return dt;
+        }
+
     }
 }
