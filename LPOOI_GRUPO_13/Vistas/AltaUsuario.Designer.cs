@@ -55,6 +55,7 @@
             this.dataGridUser.RowTemplate.Height = 24;
             this.dataGridUser.Size = new System.Drawing.Size(645, 378);
             this.dataGridUser.TabIndex = 1;
+            this.dataGridUser.CurrentCellChanged += new System.EventHandler(this.dataGridUser_CurrentCellChanged_1);
             // 
             // label1
             // 

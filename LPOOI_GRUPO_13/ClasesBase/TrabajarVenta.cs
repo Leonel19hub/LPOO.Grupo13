@@ -26,30 +26,35 @@ namespace ClasesBase
 
         }
 
-        public static decimal obtener_precio(string codigo) {
-            decimal prod_precio;
+        public static string obtener_precio(string codigo) {
+            string prod_precio;
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "obtener_precio_producto_sp";
+            cmd.CommandText = "obtenerPrecioProducto";
             cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Connection = cnn;
-
             cmd.Parameters.AddWithValue("@codigo", codigo);
+            cmd.Connection = cnn;
+            cnn.Open();
 
-            cmd.Parameters.Add("@precioFinal",SqlDbType.Decimal);
+            SqlDataReader dr;
+            dr = cmd.ExecuteReader();
+            while(dr.Read()){
+                prod_precio = (string)dr["Prod_Precio"].ToString();
+                return prod_precio;
+            }
+            return null;
+            /*cmd.Parameters.Add("@precioFinal",SqlDbType.Decimal);
             cmd.Parameters["@precioFinal"].Direction = ParameterDirection.Output;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-            cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
 
             prod_precio = (decimal)cmd.Parameters["@precioFinal"].Value;
 
-            return prod_precio;
+            return prod_precio;*/
         }
 
         public static DataTable list_nro_ventas() {
@@ -68,7 +73,7 @@ namespace ClasesBase
         public static DataTable listar_productos() {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT *,Prod_Codigo AS PRODUCTO FROM Producto";
+            cmd.CommandText = "SELECT *,Prod_Nombre AS PRODUCTO FROM Producto";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -76,6 +81,20 @@ namespace ClasesBase
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
+        }
+
+        public static int obtener_ultimo_ven_nro()
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.opticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT MAX(Ven_Nro) FROM Venta";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+            cnn.Open();
+            int ultimoVenNro = Convert.ToInt32(cmd.ExecuteScalar());
+            cnn.Close();
+            return ultimoVenNro;
+            
         }
 
         public static void insertar_venta(Venta oVenta) {
@@ -188,6 +207,9 @@ namespace ClasesBase
 
             return dt;
         }
+
+        
+
 
     }
 }

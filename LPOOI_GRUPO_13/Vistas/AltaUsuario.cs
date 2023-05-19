@@ -40,6 +40,9 @@ namespace Vistas
 
         private void load_usuarios_sp(){
             dataGridUser.DataSource = TrabajarUsuario.exec_listar_usuarios_sp();
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            txtNyA.Text = "";
         }
 
         private void dataGridUser_CurrentCellChanged(object sender, EventArgs e)
@@ -88,7 +91,7 @@ namespace Vistas
             user.Usu_ApellidoNombre = txtNyA.Text;
 
             TrabajarUsuario.insertar_usuario(user);
-            load_usuarios();
+            load_usuarios_sp();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -124,6 +127,21 @@ namespace Vistas
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             return dt;
+        }
+
+        private void dataGridUser_CurrentCellChanged_1(object sender, EventArgs e)
+        {
+            if (dataGridUser.SelectedRows.Count > 0)
+            {
+                i = Convert.ToInt32(dataGridUser.CurrentRow.Cells["ID"].Value.ToString());
+                cmbRol.Text = dataGridUser.CurrentRow.Cells["Rol"].Value.ToString();
+                txtUsername.Text = dataGridUser.CurrentRow.Cells["Username"].Value.ToString();
+                txtPassword.Text = dataGridUser.CurrentRow.Cells["Password"].Value.ToString();
+                txtNyA.Text = dataGridUser.CurrentRow.Cells["Nombre y apellido"].Value.ToString();
+                btnAgregar.Enabled = false;
+            }
+            else
+                btnAgregar.Enabled = true;
         }
     }
 }

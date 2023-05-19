@@ -108,5 +108,20 @@ namespace Vistas
             this.Close();
             fPrincipal.Show();
         }
+
+        private void dataGridObra_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (dataGridObra.SelectedRows.Count > 0)
+            {
+                txtCuitObraSocial.Text = dataGridObra.CurrentRow.Cells["CUIT"].Value.ToString();
+                txtRazonSocialObraSocial.Text = dataGridObra.CurrentRow.Cells["Razon Social"].Value.ToString();
+                txtDirObraSocial.Text = dataGridObra.CurrentRow.Cells["Direccion"].Value.ToString();
+                txtTelefonoOs.Text = dataGridObra.CurrentRow.Cells["Telefono"].Value.ToString();
+                btnAceptarObraSocial.Enabled = false;
+
+            }
+            else
+                btnAceptarObraSocial.Enabled = true;
+        }
     }
 }

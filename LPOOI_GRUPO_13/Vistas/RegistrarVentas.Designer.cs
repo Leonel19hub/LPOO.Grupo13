@@ -34,8 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnGenerarFactura = new System.Windows.Forms.Button();
             this.groupBoxVentaDetalle = new System.Windows.Forms.GroupBox();
-            this.cmdNroVenta = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnCargarProducto = new System.Windows.Forms.Button();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
@@ -46,12 +44,10 @@
             this.cmdProducto = new System.Windows.Forms.ComboBox();
             this.textBoxCantidad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridProductos = new System.Windows.Forms.DataGridView();
             this.groupBoxVentaDetalle.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,8 +101,6 @@
             // 
             // groupBoxVentaDetalle
             // 
-            this.groupBoxVentaDetalle.Controls.Add(this.cmdNroVenta);
-            this.groupBoxVentaDetalle.Controls.Add(this.label2);
             this.groupBoxVentaDetalle.Controls.Add(this.btnCargarProducto);
             this.groupBoxVentaDetalle.Controls.Add(this.textBoxPrecio);
             this.groupBoxVentaDetalle.Controls.Add(this.textBoxTotal);
@@ -116,33 +110,16 @@
             this.groupBoxVentaDetalle.Controls.Add(this.label8);
             this.groupBoxVentaDetalle.Controls.Add(this.cmdProducto);
             this.groupBoxVentaDetalle.Controls.Add(this.textBoxCantidad);
-            this.groupBoxVentaDetalle.Location = new System.Drawing.Point(681, 204);
+            this.groupBoxVentaDetalle.Location = new System.Drawing.Point(816, 204);
             this.groupBoxVentaDetalle.Name = "groupBoxVentaDetalle";
             this.groupBoxVentaDetalle.Size = new System.Drawing.Size(450, 305);
             this.groupBoxVentaDetalle.TabIndex = 20;
             this.groupBoxVentaDetalle.TabStop = false;
             this.groupBoxVentaDetalle.Text = "Cargar Producto";
             // 
-            // cmdNroVenta
-            // 
-            this.cmdNroVenta.FormattingEnabled = true;
-            this.cmdNroVenta.Location = new System.Drawing.Point(217, 213);
-            this.cmdNroVenta.Name = "cmdNroVenta";
-            this.cmdNroVenta.Size = new System.Drawing.Size(225, 24);
-            this.cmdNroVenta.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 220);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 17);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "N° de Venta: ";
-            // 
             // btnCargarProducto
             // 
-            this.btnCargarProducto.Location = new System.Drawing.Point(242, 254);
+            this.btnCargarProducto.Location = new System.Drawing.Point(242, 231);
             this.btnCargarProducto.Name = "btnCargarProducto";
             this.btnCargarProducto.Size = new System.Drawing.Size(200, 45);
             this.btnCargarProducto.TabIndex = 24;
@@ -160,7 +137,7 @@
             // textBoxTotal
             // 
             this.textBoxTotal.Enabled = false;
-            this.textBoxTotal.Location = new System.Drawing.Point(217, 171);
+            this.textBoxTotal.Location = new System.Drawing.Point(217, 173);
             this.textBoxTotal.Name = "textBoxTotal";
             this.textBoxTotal.Size = new System.Drawing.Size(225, 22);
             this.textBoxTotal.TabIndex = 18;
@@ -208,6 +185,7 @@
             this.cmdProducto.Name = "cmdProducto";
             this.cmdProducto.Size = new System.Drawing.Size(225, 24);
             this.cmdProducto.TabIndex = 16;
+            this.cmdProducto.SelectedIndexChanged += new System.EventHandler(this.cmdProducto_SelectedIndexChanged);
             // 
             // textBoxCantidad
             // 
@@ -215,6 +193,7 @@
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(225, 22);
             this.textBoxCantidad.TabIndex = 15;
+            this.textBoxCantidad.TextChanged += new System.EventHandler(this.textBoxCantidad_TextChanged);
             // 
             // groupBox1
             // 
@@ -223,25 +202,16 @@
             this.groupBox1.Controls.Add(this.dateVenta);
             this.groupBox1.Controls.Add(this.lblRegistVCli);
             this.groupBox1.Controls.Add(this.cmbRegistVCli);
-            this.groupBox1.Location = new System.Drawing.Point(681, 12);
+            this.groupBox1.Location = new System.Drawing.Point(816, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(450, 186);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nro de Venta";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(651, 186);
-            this.dataGridView1.TabIndex = 2;
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(853, 518);
+            this.button2.Location = new System.Drawing.Point(988, 518);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(154, 49);
             this.button2.TabIndex = 23;
@@ -252,20 +222,19 @@
             // dataGridProductos
             // 
             this.dataGridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProductos.Location = new System.Drawing.Point(12, 211);
+            this.dataGridProductos.Location = new System.Drawing.Point(12, 12);
             this.dataGridProductos.Name = "dataGridProductos";
             this.dataGridProductos.RowTemplate.Height = 24;
-            this.dataGridProductos.Size = new System.Drawing.Size(651, 356);
+            this.dataGridProductos.Size = new System.Drawing.Size(798, 555);
             this.dataGridProductos.TabIndex = 24;
             // 
             // RegistrarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 579);
+            this.ClientSize = new System.Drawing.Size(1278, 577);
             this.Controls.Add(this.dataGridProductos);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxVentaDetalle);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -276,7 +245,6 @@
             this.groupBoxVentaDetalle.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).EndInit();
             this.ResumeLayout(false);
 
@@ -299,11 +267,8 @@
         private System.Windows.Forms.ComboBox cmdProducto;
         private System.Windows.Forms.TextBox textBoxCantidad;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnCargarProducto;
-        private System.Windows.Forms.ComboBox cmdNroVenta;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridProductos;
     }
 }

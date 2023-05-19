@@ -13,6 +13,8 @@ namespace Vistas
 {
     public partial class RegistrarVentas : Form
     {
+        // Agrega una lista de objetos VentaDetalle como campo de la clase
+        private List<VentaDetalle> detallesVenta = new List<VentaDetalle>();
         public RegistrarVentas()
         {
             InitializeComponent();
@@ -21,14 +23,7 @@ namespace Vistas
 
         public void load_factura() {
             dataGridProductos.DataSource = TrabajarVenta.listar_det_venta();
-            dataGridView1.DataSource = TrabajarVenta.listar_ventas();
-        }
-
-        public void load_nro_venta() {
-            cmdNroVenta.SelectedIndex = -1;
-            cmdNroVenta.DisplayMember = "NRO";
-            cmdNroVenta.ValueMember = "Ven_Nro";
-            cmdNroVenta.DataSource = TrabajarVenta.list_nro_ventas();
+            //dataGridView1.DataSource = TrabajarVenta.listar_ventas();
         }
         
         public void load_combo_clientes()
@@ -50,8 +45,12 @@ namespace Vistas
         {
             load_combo_clientes();
             load_combo_productos();
-            load_nro_venta();
+            //load_nro_venta();
 
+        }
+        //prueba
+        private void listar_productos_comprados() {
+            dataGridProductos.DataSource = TrabajarProducto.listar_productos();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,10 +58,6 @@ namespace Vistas
             FormPrincipal fPrincipal = new FormPrincipal();
             this.Close();
             fPrincipal.Show();
-        }
-
-        private void listar_ventas() {
-            dataGridView1.DataSource = TrabajarVenta.listar_ventas();
         }
 
         private void listar_det_ventas() {
@@ -74,27 +69,72 @@ namespace Vistas
             Venta oVenta = new Venta();
             oVenta.Ven_Fecha = dateVenta.Value;
             oVenta.Cli_Dni = cmbRegistVCli.SelectedValue.ToString();
-            TrabajarVenta.insertar_venta(oVenta);  
-            listar_ventas();
-            load_nro_venta();
+            TrabajarVenta.insertar_venta(oVenta);
+
+            // Obtiene el Ven_Nro generado por la base de datos
+            int venNro = TrabajarVenta.obtener_ultimo_ven_nro();
+
+            // Asigna Ven_Nro a cada objeto VentaDetalle en la lista y los inserta en la base de datos
+            foreach (VentaDetalle detalle in detallesVenta)
+            {
+                detalle.Ven_Nro = venNro;
+                TrabajarVenta.insertar_det_venta(detalle);
+            }
+
+            // Limpia la lista de detalles de venta
+            detallesVenta.Clear();
+
+            listar_det_ventas();
+            //load_nro_venta();
         }
-
-        private void dataGridView1_CurrentCellChanged(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        // Modifica el evento del botón btnCargarProducto_Click para agregar productos a la lista
         private void btnCargarProducto_Click(object sender, EventArgs e)
         {
             VentaDetalle oDetVenta = new VentaDetalle();
-            oDetVenta.Ven_Nro = int.Parse(cmdNroVenta.SelectedValue.ToString());
             oDetVenta.Prod_Codigo = cmdProducto.SelectedValue.ToString();
             oDetVenta.Det_Precio = Convert.ToDecimal(textBoxPrecio.Text);
             oDetVenta.Det_Cantidad = Convert.ToDecimal(textBoxCantidad.Text);
             oDetVenta.Det_Total = Convert.ToDecimal(textBoxCantidad.Text) * Convert.ToDecimal(textBoxPrecio.Text);
 
-            TrabajarVenta.insertar_det_venta(oDetVenta);
-            listar_det_ventas();
+            // Agrega el objeto VentaDetalle a la lista
+            detallesVenta.Add(oDetVenta);
+            listar_productos_comprados();
         }
+
+        private void cmdProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmdProducto.SelectedIndex != -1) // Verifica si se ha seleccionado un producto
+            {
+                string codigoProducto = cmdProducto.SelectedValue.ToString();
+                string precio = TrabajarVenta.obtener_precio(codigoProducto);
+
+                if (precio != null)
+                {
+                    textBoxPrecio.Text = precio;
+                }
+                else
+                {
+                    textBoxPrecio.Text = "Precio no disponible";
+                }
+            }
+        }
+
+        private void textBoxCantidad_TextChanged(object sender, EventArgs e)
+        {
+            decimal total;
+            string codigoProducto = cmdProducto.SelectedValue.ToString();
+            string precio = TrabajarVenta.obtener_precio(codigoProducto);
+            if (textBoxCantidad.Text == "")
+            {
+                total = decimal.Parse(precio) * 0;
+            }
+            else
+            {
+                total = decimal.Parse(precio) * (decimal.Parse(textBoxCantidad.Text));
+            }
+
+            textBoxTotal.Text = total.ToString();
+        }
+
     }
 }

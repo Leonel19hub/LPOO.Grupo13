@@ -173,6 +173,7 @@
             this.dataGridCliente.RowTemplate.Height = 24;
             this.dataGridCliente.Size = new System.Drawing.Size(677, 468);
             this.dataGridCliente.TabIndex = 12;
+            this.dataGridCliente.CurrentCellChanged += new System.EventHandler(this.dataGridCliente_CurrentCellChanged_1);
             // 
             // lblBuscar
             // 

@@ -146,6 +146,7 @@
             this.dataGridObra.Size = new System.Drawing.Size(651, 295);
             this.dataGridObra.TabIndex = 5;
             this.dataGridObra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridObra_CellContentClick);
+            this.dataGridObra.CurrentCellChanged += new System.EventHandler(this.dataGridObra_CurrentCellChanged);
             // 
             // AltaObraSocial
             // 
