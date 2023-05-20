@@ -110,7 +110,7 @@
             this.groupBoxVentaDetalle.Controls.Add(this.label8);
             this.groupBoxVentaDetalle.Controls.Add(this.cmdProducto);
             this.groupBoxVentaDetalle.Controls.Add(this.textBoxCantidad);
-            this.groupBoxVentaDetalle.Location = new System.Drawing.Point(816, 204);
+            this.groupBoxVentaDetalle.Location = new System.Drawing.Point(919, 12);
             this.groupBoxVentaDetalle.Name = "groupBoxVentaDetalle";
             this.groupBoxVentaDetalle.Size = new System.Drawing.Size(450, 305);
             this.groupBoxVentaDetalle.TabIndex = 20;
@@ -129,6 +129,7 @@
             // 
             // textBoxPrecio
             // 
+            this.textBoxPrecio.Enabled = false;
             this.textBoxPrecio.Location = new System.Drawing.Point(217, 84);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(225, 22);
@@ -202,7 +203,7 @@
             this.groupBox1.Controls.Add(this.dateVenta);
             this.groupBox1.Controls.Add(this.lblRegistVCli);
             this.groupBox1.Controls.Add(this.cmbRegistVCli);
-            this.groupBox1.Location = new System.Drawing.Point(816, 12);
+            this.groupBox1.Location = new System.Drawing.Point(919, 326);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(450, 186);
             this.groupBox1.TabIndex = 21;
@@ -211,7 +212,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(988, 518);
+            this.button2.Location = new System.Drawing.Point(1091, 518);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(154, 49);
             this.button2.TabIndex = 23;
@@ -225,14 +226,14 @@
             this.dataGridProductos.Location = new System.Drawing.Point(12, 12);
             this.dataGridProductos.Name = "dataGridProductos";
             this.dataGridProductos.RowTemplate.Height = 24;
-            this.dataGridProductos.Size = new System.Drawing.Size(798, 555);
+            this.dataGridProductos.Size = new System.Drawing.Size(901, 555);
             this.dataGridProductos.TabIndex = 24;
             // 
             // RegistrarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 577);
+            this.ClientSize = new System.Drawing.Size(1381, 577);
             this.Controls.Add(this.dataGridProductos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);

@@ -122,6 +122,7 @@
             this.txtPrecioProd.Name = "txtPrecioProd";
             this.txtPrecioProd.Size = new System.Drawing.Size(132, 22);
             this.txtPrecioProd.TabIndex = 4;
+            this.txtPrecioProd.TextChanged += new System.EventHandler(this.txtPrecioProd_TextChanged);
             // 
             // btnAceptarProd
             // 

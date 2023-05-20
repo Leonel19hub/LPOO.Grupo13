@@ -76,6 +76,11 @@ namespace Vistas
             cnn.Close();
         }
 
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
+        }
+
         /*private void btnLogin_Click_1(object sender, EventArgs e) {
             Boolean foundUser = false;
 

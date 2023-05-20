@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ClasesBase;
 using System.Data.SqlClient;
-
+using System.Text.RegularExpressions;
 namespace Vistas
 {
     public partial class AltaProducto : Form
@@ -97,6 +97,28 @@ namespace Vistas
             oProducto.Prod_Precio = Convert.ToDecimal(txtPrecioProd.Text);
             dataGridProducto.DataSource = TrabajarProducto.modeificar_producto_sp(oProducto);
             load_productos();
+        }
+
+        private void txtPrecioProd_TextChanged(object sender, EventArgs e)
+        {
+            string pattern = @"^\d+(\.\d+)?$";
+            if (Regex.IsMatch(txtPrecioProd.Text, pattern))
+            {
+                decimal value = decimal.Parse(txtPrecioProd.Text);
+                btnAceptarProd.Enabled = true;
+                if (value != 0)
+                {
+                    btnAceptarProd.Enabled = true;
+                }
+                else
+                {
+                    btnAceptarProd.Enabled = false;
+                }
+            }
+            else
+            {
+                btnAceptarProd.Enabled = false;
+            }
         }
     }
 }

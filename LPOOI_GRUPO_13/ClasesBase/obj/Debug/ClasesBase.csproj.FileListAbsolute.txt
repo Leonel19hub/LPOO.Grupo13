@@ -43,3 +43,4 @@ C:\Users\GAMING\Desktop\tp3\LPOOI_GRUPO_13\ClasesBase\bin\Debug\ClasesBase.dll
 C:\Users\GAMING\Desktop\tp3\LPOOI_GRUPO_13\ClasesBase\bin\Debug\ClasesBase.pdb
 C:\Users\GAMING\Desktop\tp3\LPOOI_GRUPO_13\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\GAMING\Desktop\tp3\LPOOI_GRUPO_13\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\GAMING\Desktop\tp3\LPOOI_GRUPO_13\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
