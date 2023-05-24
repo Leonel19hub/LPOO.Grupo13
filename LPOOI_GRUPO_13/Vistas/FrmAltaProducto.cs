@@ -15,6 +15,7 @@ namespace Vistas
         public FrmAltaProducto()
         {
             InitializeComponent();
+            loadProductos();
         }
 
         private void butSalir_Click(object sender, EventArgs e)

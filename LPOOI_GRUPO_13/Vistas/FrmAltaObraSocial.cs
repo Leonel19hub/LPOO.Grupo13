@@ -12,6 +12,9 @@ namespace Vistas
 {
     public partial class FrmAltaObraSocial : Form
     {
+
+        int idCuit;
+
         public FrmAltaObraSocial()
         {
             InitializeComponent();
@@ -31,6 +34,7 @@ namespace Vistas
         {
             if (dataGridObraSocial.SelectedRows.Count > 0)
             {
+                idCuit = Convert.ToInt32(dataGridObraSocial.CurrentRow.Cells["ID"].Value);
                 txtCuit.Text = dataGridObraSocial.CurrentRow.Cells["CUIT"].Value.ToString();
                 txtRazonSocial.Text = dataGridObraSocial.CurrentRow.Cells["Razon Social"].Value.ToString();
                 txtDireccion.Text = dataGridObraSocial.CurrentRow.Cells["Direccion"].Value.ToString();
@@ -91,6 +95,44 @@ namespace Vistas
             btnSalir.BackColor = Color.FromArgb(23, 21, 32);
             btnSalir.ForeColor = Color.FromArgb(224, 224, 224);
         }
+        #endregion
+
+        #region Operacion AMB Obra Social
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirmar Cliente?", "Aceptar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ObraSocial oObraSocial = new ObraSocial();
+                oObraSocial.Os_Cuit = txtCuit.Text;
+                oObraSocial.Os_RazonSocial= txtRazonSocial.Text;
+                oObraSocial.Os_Direccion = txtDireccion.Text;
+                oObraSocial.Os_Telefono = txtTelefono.Text;
+
+                TrabajarObraSocial.insertarObraSocialSp(oObraSocial);
+                load_obrasocial();
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            ObraSocial oObraSocial = new ObraSocial();
+            oObraSocial.Os_Id = idCuit;
+            oObraSocial.Os_Cuit = txtCuit.Text;
+            oObraSocial.Os_RazonSocial = txtRazonSocial.Text;
+            oObraSocial.Os_Direccion = txtDireccion.Text;
+            oObraSocial.Os_Telefono = txtTelefono.Text;
+
+            dataGridObraSocial.DataSource = TrabajarObraSocial.editarObraSocialSp(oObraSocial);
+            load_obrasocial();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            dataGridObraSocial.DataSource = TrabajarObraSocial.eliminarObraSocialSp(idCuit);
+            load_obrasocial();
+        }
+
         #endregion
     }
 }

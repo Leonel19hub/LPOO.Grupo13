@@ -32,7 +32,7 @@ namespace Vistas
 
         public void load_compras_clientes_sp()
         {
-            dataCompras.DataSource = TrabajarVenta.listar_compras_cliente_sp(Convert.ToInt32(cmdClientes.SelectedValue.ToString()));
+            dataCompras.DataSource = TrabajarVenta.listar_compras_cliente_sp(Convert.ToInt32(cmdClientes.SelectedValue));
         }
 
         public void load_listar_ventas_entre_fechas()
@@ -42,7 +42,7 @@ namespace Vistas
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            TrabajarVenta.listar_compras_cliente_sp(Convert.ToInt32(cmdClientes.SelectedValue.ToString()));
+            TrabajarVenta.listar_compras_cliente_sp(Convert.ToInt32(cmdClientes.SelectedValue));
             load_compras_clientes_sp();
         }
 

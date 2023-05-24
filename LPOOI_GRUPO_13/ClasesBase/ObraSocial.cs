@@ -34,5 +34,13 @@ namespace ClasesBase
             get { return os_Telefono; }
             set { os_Telefono = value; }
         }
+
+        private int os_Id;
+
+        public int Os_Id
+        {
+            get { return os_Id; }
+            set { os_Id = value; }
+        }
     }
 }

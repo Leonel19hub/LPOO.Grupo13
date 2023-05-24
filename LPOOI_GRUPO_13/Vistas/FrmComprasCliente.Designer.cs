@@ -66,17 +66,16 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.btnBuscarFechas);
             this.groupBox2.Controls.Add(this.dtFechaFinal);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.dtFechaInicio);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(544, 58);
+            this.groupBox2.Location = new System.Drawing.Point(527, 58);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(495, 97);
+            this.groupBox2.Size = new System.Drawing.Size(512, 97);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busqueda entre fechas";
@@ -88,7 +87,7 @@
             this.btnBuscarFechas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarFechas.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarFechas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuscarFechas.Location = new System.Drawing.Point(354, 56);
+            this.btnBuscarFechas.Location = new System.Drawing.Point(372, 56);
             this.btnBuscarFechas.Name = "btnBuscarFechas";
             this.btnBuscarFechas.Size = new System.Drawing.Size(134, 34);
             this.btnBuscarFechas.TabIndex = 21;
@@ -101,7 +100,7 @@
             // dtFechaFinal
             // 
             this.dtFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaFinal.Location = new System.Drawing.Point(362, 28);
+            this.dtFechaFinal.Location = new System.Drawing.Point(380, 28);
             this.dtFechaFinal.Name = "dtFechaFinal";
             this.dtFechaFinal.Size = new System.Drawing.Size(126, 22);
             this.dtFechaFinal.TabIndex = 14;
@@ -111,7 +110,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(254, 28);
+            this.label3.Location = new System.Drawing.Point(272, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 19);
             this.label3.TabIndex = 12;
@@ -138,8 +137,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cmdClientes);
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
@@ -206,12 +204,11 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(39)))), ((int)(((byte)(73)))));
-            this.label1.Location = new System.Drawing.Point(373, 12);
+            this.label1.Location = new System.Drawing.Point(356, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(332, 28);
             this.label1.TabIndex = 7;
@@ -241,7 +238,7 @@
             this.dataCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataCompras.EnableHeadersVisualStyles = false;
             this.dataCompras.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(71)))), ((int)(((byte)(106)))));
-            this.dataCompras.Location = new System.Drawing.Point(204, 176);
+            this.dataCompras.Location = new System.Drawing.Point(96, 176);
             this.dataCompras.Name = "dataCompras";
             this.dataCompras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -259,7 +256,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataCompras.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataCompras.RowTemplate.Height = 24;
-            this.dataCompras.Size = new System.Drawing.Size(640, 318);
+            this.dataCompras.Size = new System.Drawing.Size(873, 318);
             this.dataCompras.TabIndex = 31;
             // 
             // FrmComprasCliente

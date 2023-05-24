@@ -74,7 +74,7 @@
             this.dataGridCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridCompras.EnableHeadersVisualStyles = false;
             this.dataGridCompras.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(71)))), ((int)(((byte)(106)))));
-            this.dataGridCompras.Location = new System.Drawing.Point(191, 176);
+            this.dataGridCompras.Location = new System.Drawing.Point(135, 176);
             this.dataGridCompras.Name = "dataGridCompras";
             this.dataGridCompras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -92,7 +92,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridCompras.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridCompras.RowTemplate.Height = 24;
-            this.dataGridCompras.Size = new System.Drawing.Size(640, 318);
+            this.dataGridCompras.Size = new System.Drawing.Size(802, 318);
             this.dataGridCompras.TabIndex = 28;
             // 
             // panelSlideMenu
@@ -110,29 +110,29 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.btnBuscarFechas);
             this.groupBox2.Controls.Add(this.dtProdFechaFinal);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.dtProdFechaInicio);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(544, 58);
+            this.groupBox2.Location = new System.Drawing.Point(523, 58);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(495, 97);
+            this.groupBox2.Size = new System.Drawing.Size(529, 97);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Busqueda entre fechas";
             // 
             // btnBuscarFechas
             // 
+            this.btnBuscarFechas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscarFechas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(39)))), ((int)(((byte)(73)))));
             this.btnBuscarFechas.FlatAppearance.BorderSize = 3;
             this.btnBuscarFechas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarFechas.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarFechas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuscarFechas.Location = new System.Drawing.Point(354, 56);
+            this.btnBuscarFechas.Location = new System.Drawing.Point(388, 56);
             this.btnBuscarFechas.Name = "btnBuscarFechas";
             this.btnBuscarFechas.Size = new System.Drawing.Size(134, 34);
             this.btnBuscarFechas.TabIndex = 21;
@@ -144,18 +144,20 @@
             // 
             // dtProdFechaFinal
             // 
+            this.dtProdFechaFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtProdFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtProdFechaFinal.Location = new System.Drawing.Point(362, 28);
+            this.dtProdFechaFinal.Location = new System.Drawing.Point(396, 28);
             this.dtProdFechaFinal.Name = "dtProdFechaFinal";
             this.dtProdFechaFinal.Size = new System.Drawing.Size(126, 22);
             this.dtProdFechaFinal.TabIndex = 14;
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(254, 28);
+            this.label3.Location = new System.Drawing.Point(279, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 19);
             this.label3.TabIndex = 12;
@@ -163,8 +165,9 @@
             // 
             // dtProdFechaInicio
             // 
+            this.dtProdFechaInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtProdFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtProdFechaInicio.Location = new System.Drawing.Point(122, 26);
+            this.dtProdFechaInicio.Location = new System.Drawing.Point(131, 26);
             this.dtProdFechaInicio.Name = "dtProdFechaInicio";
             this.dtProdFechaInicio.Size = new System.Drawing.Size(126, 22);
             this.dtProdFechaInicio.TabIndex = 11;
@@ -182,15 +185,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cmdClientes);
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(489, 97);
+            this.groupBox1.Size = new System.Drawing.Size(505, 97);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por Cliente";
@@ -200,7 +202,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(16, 28);
+            this.label2.Location = new System.Drawing.Point(6, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(189, 19);
             this.label2.TabIndex = 8;
@@ -209,9 +211,9 @@
             // cmdClientes
             // 
             this.cmdClientes.FormattingEnabled = true;
-            this.cmdClientes.Location = new System.Drawing.Point(223, 24);
+            this.cmdClientes.Location = new System.Drawing.Point(218, 24);
             this.cmdClientes.Name = "cmdClientes";
-            this.cmdClientes.Size = new System.Drawing.Size(260, 24);
+            this.cmdClientes.Size = new System.Drawing.Size(281, 24);
             this.cmdClientes.TabIndex = 20;
             this.cmdClientes.Text = "Seleccione";
             // 
@@ -222,7 +224,7 @@
             this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarCliente.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuscarCliente.Location = new System.Drawing.Point(349, 57);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(365, 57);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(134, 34);
             this.btnBuscarCliente.TabIndex = 16;
@@ -250,12 +252,11 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(39)))), ((int)(((byte)(73)))));
-            this.label1.Location = new System.Drawing.Point(399, 12);
+            this.label1.Location = new System.Drawing.Point(383, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(290, 28);
             this.label1.TabIndex = 7;
@@ -270,7 +271,7 @@
             this.ClientSize = new System.Drawing.Size(1064, 506);
             this.Controls.Add(this.panelSlideMenu);
             this.Controls.Add(this.dataGridCompras);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmDetalleVentaProducto";
             this.Text = "FrmDetalleVentaProducto";
             this.Load += new System.EventHandler(this.FrmDetalleVentaProducto_Load);

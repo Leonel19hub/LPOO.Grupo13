@@ -294,9 +294,9 @@
             this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscar.Location = new System.Drawing.Point(423, 18);
+            this.txtBuscar.Location = new System.Drawing.Point(414, 18);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(516, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(525, 22);
             this.txtBuscar.TabIndex = 31;
             // 
             // FrmAmbUsuario

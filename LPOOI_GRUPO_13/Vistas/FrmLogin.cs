@@ -88,63 +88,133 @@ namespace Vistas
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        //private void btnLogin_Click(object sender, EventArgs e)
+        //{
+        //    FrmPrincipal principal = new FrmPrincipal();
+        //    FrmBienvenida frmBienvenida = new FrmBienvenida();
+        //    SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.nuevaOpticaConnectionString);
+        //    cnn.Open();
+        //    string ini = "SELECT Usu_Username FROM Usuario WHERE (Usu_Username=@username AND Usu_Contraseña=@password)";
+        //    SqlCommand cmd = new SqlCommand(ini, cnn);
+        //    DataTable list_users = TrabajarUsuario.listar_usuarios();
+        //    cmd.Parameters.AddWithValue("@username", txtUsuario.Text);
+        //    cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+
+        //    if (cmd.ExecuteScalar() != null)
+        //    {
+                
+        //        //MessageBox.Show("Bienvenido " + txtUsuario.Text, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        //        foreach (DataRow fila in list_users.Rows)
+        //        {
+        //            if (fila["Username"].ToString() == txtUsuario.Text && fila["Password"].ToString() == txtPassword.Text)
+        //            {
+        //                nombreApellido = fila["Nombre y Apellido"].ToString();
+        //                IdOperador = fila["ID"].ToString();
+        //                if (fila["Rol"].ToString() == "Administrador")
+        //                {
+        //                    acceso = fila["Rol"].ToString();
+        //                }
+        //                else
+        //                {
+        //                    if (fila["Rol"].ToString() == "Operador")
+        //                    {
+        //                        acceso = fila["Rol"].ToString();
+        //                    }
+        //                    else
+        //                    {
+        //                        if (fila["Rol"].ToString() == "Auditor")
+        //                        {
+        //                            acceso = fila["Rol"].ToString();
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        }
+                
+        //        frmBienvenida.NombreApellido = nombreApellido;
+        //        frmBienvenida.IdOperador = IdOperador;
+        //        frmBienvenida.Acceso = acceso;
+
+        //        principal.NombreApellido = nombreApellido;
+        //        principal.IdOperador = IdOperador;
+        //        principal.Acceso = acceso;
+        //    }
+        //    this.Hide();
+        //    //FrmBienvanida bienvenida = new FrmBienvanida();
+        //    frmBienvenida.ShowDialog();
+            
+        //    principal.Show();
+        //}
         private void btnLogin_Click(object sender, EventArgs e)
         {
             FrmPrincipal principal = new FrmPrincipal();
             FrmBienvenida frmBienvenida = new FrmBienvenida();
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.nuevaOpticaConnectionString);
             cnn.Open();
-            string ini = "SELECT Usu_Username FROM Usuario WHERE (Usu_Username=@username AND Usu_Contraseña=@password)";
-            SqlCommand cmd = new SqlCommand(ini, cnn);
-            DataTable list_users = TrabajarUsuario.listar_usuarios();
+            string query = "SELECT Usu_Username FROM Usuario WHERE (Usu_Username=@username)";
+            SqlCommand cmd = new SqlCommand(query, cnn);
             cmd.Parameters.AddWithValue("@username", txtUsuario.Text);
-            cmd.Parameters.AddWithValue("@password", txtPassword.Text);
 
-            if (cmd.ExecuteScalar() != null)
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            if (dataTable.Rows.Count > 0)
             {
-                
-                //MessageBox.Show("Bienvenido " + txtUsuario.Text, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                // El nombre de usuario existe
+
+                // Obtener los datos del usuario
+                DataTable list_users = TrabajarUsuario.listar_usuarios();
                 foreach (DataRow fila in list_users.Rows)
                 {
-                    if (fila["Username"].ToString() == txtUsuario.Text && fila["Password"].ToString() == txtPassword.Text)
+                    if (fila["Username"].ToString().Equals(txtUsuario.Text) && fila["Password"].ToString().Equals(txtPassword.Text))
                     {
+                        // Las credenciales coinciden, asignar los datos del usuario
                         nombreApellido = fila["Nombre y Apellido"].ToString();
                         IdOperador = fila["ID"].ToString();
                         if (fila["Rol"].ToString() == "Administrador")
                         {
                             acceso = fila["Rol"].ToString();
                         }
-                        else
+                        else if (fila["Rol"].ToString() == "Operador")
                         {
-                            if (fila["Rol"].ToString() == "Operador")
-                            {
-                                acceso = fila["Rol"].ToString();
-                            }
-                            else
-                            {
-                                if (fila["Rol"].ToString() == "Auditor")
-                                {
-                                    acceso = fila["Rol"].ToString();
-                                }
-                            }
+                            acceso = fila["Rol"].ToString();
                         }
+                        else if (fila["Rol"].ToString() == "Auditor")
+                        {
+                            acceso = fila["Rol"].ToString();
+                        }
+
+                        // Mostrar las ventanas de bienvenida y principal
+                        frmBienvenida.NombreApellido = nombreApellido;
+                        frmBienvenida.IdOperador = IdOperador;
+                        frmBienvenida.Acceso = acceso;
+
+                        principal.NombreApellido = nombreApellido;
+                        principal.IdOperador = IdOperador;
+                        principal.Acceso = acceso;
+
+                        this.Hide();
+                        frmBienvenida.ShowDialog();
+                        principal.Show();
+
+                        // Salir del método ya que se encontraron las credenciales
+                        return;
                     }
                 }
-                
-                frmBienvenida.NombreApellido = nombreApellido;
-                frmBienvenida.IdOperador = IdOperador;
-                frmBienvenida.Acceso = acceso;
 
-                principal.NombreApellido = nombreApellido;
-                principal.IdOperador = IdOperador;
-                principal.Acceso = acceso;
+                // Si llega a este punto, las credenciales no coinciden
+                MessageBox.Show("El nombre de usuario o contraseña no coinciden");
             }
-            this.Hide();
-            //FrmBienvanida bienvenida = new FrmBienvanida();
-            frmBienvenida.ShowDialog();
-            
-            principal.Show();
+            else
+            {
+                // No se encontró el usuario, mostrar mensaje de error
+                MessageBox.Show("El usuario " + txtUsuario.Text + " no existe");
+            }
+
         }
+
+
 
     }
 }
