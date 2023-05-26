@@ -74,7 +74,7 @@
             this.dataGridCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridCompras.EnableHeadersVisualStyles = false;
             this.dataGridCompras.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(71)))), ((int)(((byte)(106)))));
-            this.dataGridCompras.Location = new System.Drawing.Point(135, 176);
+            this.dataGridCompras.Location = new System.Drawing.Point(131, 176);
             this.dataGridCompras.Name = "dataGridCompras";
             this.dataGridCompras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -146,7 +146,7 @@
             // 
             this.dtProdFechaFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtProdFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtProdFechaFinal.Location = new System.Drawing.Point(396, 28);
+            this.dtProdFechaFinal.Location = new System.Drawing.Point(395, 28);
             this.dtProdFechaFinal.Name = "dtProdFechaFinal";
             this.dtProdFechaFinal.Size = new System.Drawing.Size(126, 22);
             this.dtProdFechaFinal.TabIndex = 14;
@@ -157,7 +157,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(279, 28);
+            this.label3.Location = new System.Drawing.Point(276, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 19);
             this.label3.TabIndex = 12;
@@ -167,7 +167,7 @@
             // 
             this.dtProdFechaInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtProdFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtProdFechaInicio.Location = new System.Drawing.Point(131, 26);
+            this.dtProdFechaInicio.Location = new System.Drawing.Point(133, 26);
             this.dtProdFechaInicio.Name = "dtProdFechaInicio";
             this.dtProdFechaInicio.Size = new System.Drawing.Size(126, 22);
             this.dtProdFechaInicio.TabIndex = 11;
@@ -239,6 +239,7 @@
             this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(39)))), ((int)(((byte)(73)))));
             this.btnSalir.FlatAppearance.BorderSize = 3;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnSalir.Location = new System.Drawing.Point(12, 12);
             this.btnSalir.Name = "btnSalir";
@@ -256,7 +257,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(39)))), ((int)(((byte)(73)))));
-            this.label1.Location = new System.Drawing.Point(383, 12);
+            this.label1.Location = new System.Drawing.Point(387, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(290, 28);
             this.label1.TabIndex = 7;
@@ -271,7 +272,7 @@
             this.ClientSize = new System.Drawing.Size(1064, 506);
             this.Controls.Add(this.panelSlideMenu);
             this.Controls.Add(this.dataGridCompras);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDetalleVentaProducto";
             this.Text = "FrmDetalleVentaProducto";
             this.Load += new System.EventHandler(this.FrmDetalleVentaProducto_Load);

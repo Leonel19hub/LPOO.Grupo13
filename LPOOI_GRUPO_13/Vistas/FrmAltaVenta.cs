@@ -92,7 +92,7 @@ namespace Vistas
         {
             Venta oVenta = new Venta();
             oVenta.Ven_Fecha = dateVenta.Value;
-            oVenta.Cli_ID = Convert.ToInt32(cmbRegistVCli.SelectedValue.ToString());
+            oVenta.Cli_ID = Convert.ToInt32(cmbRegistVCli.SelectedValue);
             TrabajarVenta.insertar_venta(oVenta);
             // Obtiene el Ven_Nro generado por la base de datos
             int venNro = TrabajarVenta.obtener_ultimo_ven_nro();

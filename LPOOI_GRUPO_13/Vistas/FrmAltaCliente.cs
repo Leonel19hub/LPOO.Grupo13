@@ -15,6 +15,7 @@ namespace Vistas
         public FrmAltaCliente()
         {
             InitializeComponent();
+            loadClientes();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

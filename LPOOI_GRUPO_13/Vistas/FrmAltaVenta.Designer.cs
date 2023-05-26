@@ -78,7 +78,7 @@
             this.groupBox1.Controls.Add(this.dateVenta);
             this.groupBox1.Controls.Add(this.cmbRegistVCli);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 329);
+            this.groupBox1.Location = new System.Drawing.Point(13, 329);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(351, 165);
             this.groupBox1.TabIndex = 24;
@@ -90,7 +90,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(6, 95);
+            this.label8.Location = new System.Drawing.Point(10, 86);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 19);
             this.label8.TabIndex = 20;
@@ -103,7 +103,7 @@
             this.btnGenerarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarFactura.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnGenerarFactura.Location = new System.Drawing.Point(176, 121);
+            this.btnGenerarFactura.Location = new System.Drawing.Point(173, 117);
             this.btnGenerarFactura.Name = "btnGenerarFactura";
             this.btnGenerarFactura.Size = new System.Drawing.Size(168, 34);
             this.btnGenerarFactura.TabIndex = 18;
@@ -118,7 +118,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(6, 50);
+            this.label7.Location = new System.Drawing.Point(10, 45);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 19);
             this.label7.TabIndex = 19;
@@ -127,7 +127,7 @@
             // dateVenta
             // 
             this.dateVenta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateVenta.Location = new System.Drawing.Point(103, 92);
+            this.dateVenta.Location = new System.Drawing.Point(100, 88);
             this.dateVenta.Margin = new System.Windows.Forms.Padding(4);
             this.dateVenta.Name = "dateVenta";
             this.dateVenta.Size = new System.Drawing.Size(241, 22);
@@ -136,7 +136,7 @@
             // cmbRegistVCli
             // 
             this.cmbRegistVCli.FormattingEnabled = true;
-            this.cmbRegistVCli.Location = new System.Drawing.Point(103, 45);
+            this.cmbRegistVCli.Location = new System.Drawing.Point(100, 45);
             this.cmbRegistVCli.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRegistVCli.Name = "cmbRegistVCli";
             this.cmbRegistVCli.Size = new System.Drawing.Size(241, 24);
@@ -154,7 +154,7 @@
             this.groupBoxVentaDetalle.Controls.Add(this.label3);
             this.groupBoxVentaDetalle.Controls.Add(this.label5);
             this.groupBoxVentaDetalle.ForeColor = System.Drawing.Color.White;
-            this.groupBoxVentaDetalle.Location = new System.Drawing.Point(12, 92);
+            this.groupBoxVentaDetalle.Location = new System.Drawing.Point(13, 92);
             this.groupBoxVentaDetalle.Name = "groupBoxVentaDetalle";
             this.groupBoxVentaDetalle.Size = new System.Drawing.Size(351, 231);
             this.groupBoxVentaDetalle.TabIndex = 22;
@@ -164,7 +164,7 @@
             // textBoxPrecio
             // 
             this.textBoxPrecio.Enabled = false;
-            this.textBoxPrecio.Location = new System.Drawing.Point(119, 67);
+            this.textBoxPrecio.Location = new System.Drawing.Point(112, 73);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(225, 22);
             this.textBoxPrecio.TabIndex = 14;
@@ -172,7 +172,7 @@
             // textBoxTotal
             // 
             this.textBoxTotal.Enabled = false;
-            this.textBoxTotal.Location = new System.Drawing.Point(119, 156);
+            this.textBoxTotal.Location = new System.Drawing.Point(112, 155);
             this.textBoxTotal.Name = "textBoxTotal";
             this.textBoxTotal.Size = new System.Drawing.Size(225, 22);
             this.textBoxTotal.TabIndex = 18;
@@ -180,7 +180,7 @@
             // cmdProducto
             // 
             this.cmdProducto.FormattingEnabled = true;
-            this.cmdProducto.Location = new System.Drawing.Point(119, 30);
+            this.cmdProducto.Location = new System.Drawing.Point(112, 30);
             this.cmdProducto.Name = "cmdProducto";
             this.cmdProducto.Size = new System.Drawing.Size(225, 24);
             this.cmdProducto.TabIndex = 16;
@@ -188,7 +188,7 @@
             // 
             // textBoxCantidad
             // 
-            this.textBoxCantidad.Location = new System.Drawing.Point(119, 110);
+            this.textBoxCantidad.Location = new System.Drawing.Point(112, 114);
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(225, 22);
             this.textBoxCantidad.TabIndex = 15;
@@ -201,7 +201,7 @@
             this.btnCargarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarProducto.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnCargarProducto.Location = new System.Drawing.Point(176, 184);
+            this.btnCargarProducto.Location = new System.Drawing.Point(169, 183);
             this.btnCargarProducto.Name = "btnCargarProducto";
             this.btnCargarProducto.Size = new System.Drawing.Size(168, 34);
             this.btnCargarProducto.TabIndex = 16;
@@ -216,7 +216,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(6, 33);
+            this.label2.Location = new System.Drawing.Point(13, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 19);
             this.label2.TabIndex = 8;
@@ -227,7 +227,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(6, 113);
+            this.label4.Location = new System.Drawing.Point(13, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 19);
             this.label4.TabIndex = 10;
@@ -238,7 +238,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(6, 70);
+            this.label3.Location = new System.Drawing.Point(13, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 19);
             this.label3.TabIndex = 9;
@@ -249,7 +249,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(6, 159);
+            this.label5.Location = new System.Drawing.Point(13, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 19);
             this.label5.TabIndex = 11;
@@ -260,6 +260,7 @@
             this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(39)))), ((int)(((byte)(73)))));
             this.btnSalir.FlatAppearance.BorderSize = 3;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnSalir.Location = new System.Drawing.Point(12, 12);
             this.btnSalir.Name = "btnSalir";
@@ -276,7 +277,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(39)))), ((int)(((byte)(73)))));
-            this.label1.Location = new System.Drawing.Point(101, 61);
+            this.label1.Location = new System.Drawing.Point(94, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 28);
             this.label1.TabIndex = 7;

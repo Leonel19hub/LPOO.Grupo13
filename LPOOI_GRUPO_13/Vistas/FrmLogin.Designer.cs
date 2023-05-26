@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -38,10 +39,16 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMimiimizar = new System.Windows.Forms.PictureBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.errorUsuarioContraseña = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorUsuarioNoExiste = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMimiimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorUsuarioContraseña)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorUsuarioNoExiste)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,7 +65,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(41, 85);
+            this.pictureBox3.Location = new System.Drawing.Point(36, 85);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(178, 161);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -70,8 +77,8 @@
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPassword.Location = new System.Drawing.Point(298, 178);
+            this.txtPassword.ForeColor = System.Drawing.Color.White;
+            this.txtPassword.Location = new System.Drawing.Point(61, 174);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(408, 25);
             this.txtPassword.TabIndex = 2;
@@ -83,8 +90,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(364, 9);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(138, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 40);
             this.label1.TabIndex = 3;
@@ -97,8 +104,9 @@
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.ForeColor = System.Drawing.Color.LightGray;
-            this.btnLogin.Location = new System.Drawing.Point(298, 247);
+            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(61, 244);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(408, 40);
             this.btnLogin.TabIndex = 3;
@@ -112,7 +120,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel1.Location = new System.Drawing.Point(377, 300);
+            this.linkLabel1.Location = new System.Drawing.Point(133, 300);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(264, 21);
             this.linkLabel1.TabIndex = 0;
@@ -122,7 +130,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(760, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(507, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(20, 20);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -133,7 +141,7 @@
             // btnMimiimizar
             // 
             this.btnMimiimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMimiimizar.Image")));
-            this.btnMimiimizar.Location = new System.Drawing.Point(739, 0);
+            this.btnMimiimizar.Location = new System.Drawing.Point(481, 3);
             this.btnMimiimizar.Name = "btnMimiimizar";
             this.btnMimiimizar.Size = new System.Drawing.Size(20, 20);
             this.btnMimiimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -146,8 +154,8 @@
             this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsuario.Location = new System.Drawing.Point(298, 85);
+            this.txtUsuario.ForeColor = System.Drawing.Color.White;
+            this.txtUsuario.Location = new System.Drawing.Point(61, 110);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(408, 25);
             this.txtUsuario.TabIndex = 1;
@@ -155,19 +163,36 @@
             this.txtUsuario.Enter += new System.EventHandler(this.textBox1_Enter);
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
             // 
+            // errorUsuarioContraseña
+            // 
+            this.errorUsuarioContraseña.ContainerControl = this;
+            // 
+            // errorUsuarioNoExiste
+            // 
+            this.errorUsuarioNoExiste.ContainerControl = this;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.linkLabel1);
+            this.panel2.Controls.Add(this.btnCerrar);
+            this.panel2.Controls.Add(this.btnLogin);
+            this.panel2.Controls.Add(this.btnMimiimizar);
+            this.panel2.Controls.Add(this.txtUsuario);
+            this.panel2.Controls.Add(this.txtPassword);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(250, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(530, 330);
+            this.panel2.TabIndex = 8;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
-            this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.btnMimiimizar);
-            this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
@@ -179,8 +204,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMimiimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorUsuarioContraseña)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorUsuarioNoExiste)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -195,5 +223,8 @@
         private System.Windows.Forms.PictureBox btnMimiimizar;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.ErrorProvider errorUsuarioContraseña;
+        private System.Windows.Forms.ErrorProvider errorUsuarioNoExiste;
+        private System.Windows.Forms.Panel panel2;
     }
 }

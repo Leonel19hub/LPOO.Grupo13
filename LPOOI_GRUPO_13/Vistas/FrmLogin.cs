@@ -149,6 +149,11 @@ namespace Vistas
         {
             FrmPrincipal principal = new FrmPrincipal();
             FrmBienvenida frmBienvenida = new FrmBienvenida();
+
+            // Limpiar mensajes de error
+            errorUsuarioContraseña.SetError(txtPassword, "");
+            errorUsuarioNoExiste.SetError(txtUsuario, "");
+
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.nuevaOpticaConnectionString);
             cnn.Open();
             string query = "SELECT Usu_Username FROM Usuario WHERE (Usu_Username=@username)";
@@ -165,6 +170,7 @@ namespace Vistas
 
                 // Obtener los datos del usuario
                 DataTable list_users = TrabajarUsuario.listar_usuarios();
+                bool usuarioEncontrado = false; // Bandera para controlar si se encontró el usuario
                 foreach (DataRow fila in list_users.Rows)
                 {
                     if (fila["Username"].ToString().Equals(txtUsuario.Text) && fila["Password"].ToString().Equals(txtPassword.Text))
@@ -201,15 +207,25 @@ namespace Vistas
                         // Salir del método ya que se encontraron las credenciales
                         return;
                     }
+                    usuarioEncontrado = true;
+                }
+
+                // Si llega a este punto y el usuario no se encontró, mostrar mensaje de error
+                if (!usuarioEncontrado)
+                {
+                    errorUsuarioNoExiste.SetError(txtUsuario, "El usuario " + txtUsuario.Text + " no existe");
+                    return;
                 }
 
                 // Si llega a este punto, las credenciales no coinciden
-                MessageBox.Show("El nombre de usuario o contraseña no coinciden");
+                errorUsuarioContraseña.SetError(txtPassword, "El nombre de usuario o contraseña no coinciden");
+                //MessageBox.Show("El nombre de usuario o contraseña no coinciden");
             }
             else
             {
                 // No se encontró el usuario, mostrar mensaje de error
-                MessageBox.Show("El usuario " + txtUsuario.Text + " no existe");
+                errorUsuarioNoExiste.SetError(txtUsuario, "El usuario " + txtUsuario.Text + " no existe");
+                //MessageBox.Show("El usuario " + txtUsuario.Text + " no existe");
             }
 
         }
