@@ -24,6 +24,7 @@ namespace Vistas
         private void customizeDesing() {
             panelProductSubMenu.Visible = false;
             panelVentasSubMenu.Visible = false;
+
         }
 
         private void hideSubMenu() {
@@ -93,6 +94,7 @@ namespace Vistas
             panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+
         }
 
         private void btnClientes_Click(object sender, EventArgs e)

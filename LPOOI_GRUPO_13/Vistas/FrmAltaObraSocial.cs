@@ -30,21 +30,85 @@ namespace Vistas
             this.Close();
         }
 
+        //private void dataGridObraSocial_CurrentCellChanged(object sender, EventArgs e)
+        //{
+        //    if (dataGridObraSocial.SelectedRows.Count > 0)
+        //    {
+        //        idCuit = Convert.ToInt32(dataGridObraSocial.CurrentRow.Cells["ID"].Value);
+        //        txtCuit.Text = dataGridObraSocial.CurrentRow.Cells["CUIT"].Value.ToString();
+        //        txtRazonSocial.Text = dataGridObraSocial.CurrentRow.Cells["Razon Social"].Value.ToString();
+        //        txtDireccion.Text = dataGridObraSocial.CurrentRow.Cells["Direccion"].Value.ToString();
+        //        txtTelefono.Text = dataGridObraSocial.CurrentRow.Cells["N° Telefono"].Value.ToString();
+        //        btnAgregar.Enabled = false;
+
+        //    }
+        //    else
+        //        btnAgregar.Enabled = true;
+        //}
+
         private void dataGridObraSocial_CurrentCellChanged(object sender, EventArgs e)
         {
             if (dataGridObraSocial.SelectedRows.Count > 0)
             {
-                idCuit = Convert.ToInt32(dataGridObraSocial.CurrentRow.Cells["ID"].Value);
-                txtCuit.Text = dataGridObraSocial.CurrentRow.Cells["CUIT"].Value.ToString();
-                txtRazonSocial.Text = dataGridObraSocial.CurrentRow.Cells["Razon Social"].Value.ToString();
-                txtDireccion.Text = dataGridObraSocial.CurrentRow.Cells["Direccion"].Value.ToString();
-                txtTelefono.Text = dataGridObraSocial.CurrentRow.Cells["N° Telefono"].Value.ToString();
-                btnAgregar.Enabled = false;
+                int columnIndexID = dataGridObraSocial.Columns["ID"].Index;
+                int columnIndexCuit = dataGridObraSocial.Columns["CUIT"].Index;
+                int columnIndexRazonSocial = dataGridObraSocial.Columns["Razon Social"].Index;
+                int columnIndexDireccion = dataGridObraSocial.Columns["Direccion"].Index;
+                int columnIndexTelefono = dataGridObraSocial.Columns["N° Telefono"].Index;
 
+                if (!Convert.IsDBNull(dataGridObraSocial.CurrentRow.Cells[columnIndexID].Value))
+                {
+                    idCuit = Convert.ToInt32(dataGridObraSocial.CurrentRow.Cells[columnIndexID].Value);
+                }
+                else
+                {
+                    idCuit = 0;
+                }
+
+                if (!Convert.IsDBNull(dataGridObraSocial.CurrentRow.Cells[columnIndexCuit].Value))
+                {
+                    txtCuit.Text = dataGridObraSocial.CurrentRow.Cells[columnIndexCuit].Value.ToString();
+                }
+                else
+                {
+                    txtCuit.Text = "";
+                }
+
+                if (!Convert.IsDBNull(dataGridObraSocial.CurrentRow.Cells[columnIndexRazonSocial].Value))
+                {
+                    txtRazonSocial.Text = dataGridObraSocial.CurrentRow.Cells[columnIndexRazonSocial].Value.ToString();
+                }
+                else
+                {
+                    txtRazonSocial.Text = "";
+                }
+
+                if (!Convert.IsDBNull(dataGridObraSocial.CurrentRow.Cells[columnIndexDireccion].Value))
+                {
+                    txtDireccion.Text = dataGridObraSocial.CurrentRow.Cells[columnIndexDireccion].Value.ToString();
+                }
+                else
+                {
+                    txtDireccion.Text = "";
+                }
+
+                if (!Convert.IsDBNull(dataGridObraSocial.CurrentRow.Cells[columnIndexTelefono].Value))
+                {
+                    txtTelefono.Text = dataGridObraSocial.CurrentRow.Cells[columnIndexTelefono].Value.ToString();
+                }
+                else
+                {
+                    txtTelefono.Text = "";
+                }
+
+                btnAgregar.Enabled = false;
             }
             else
+            {
                 btnAgregar.Enabled = true;
+            }
         }
+
 
         #region Efecto Hover en Botones
 
@@ -134,5 +198,10 @@ namespace Vistas
         }
 
         #endregion
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            load_obrasocial();
+        }
     }
 }

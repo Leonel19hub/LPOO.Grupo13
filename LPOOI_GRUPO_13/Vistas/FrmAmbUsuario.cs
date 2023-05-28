@@ -220,5 +220,10 @@ namespace Vistas
         {
             this.Close();
         }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            load_usuarios_sp();
+        }
     }
 }

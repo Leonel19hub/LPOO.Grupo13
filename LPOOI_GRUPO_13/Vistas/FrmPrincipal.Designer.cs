@@ -73,7 +73,7 @@
             this.panelSlideMenu.Controls.Add(this.panelLogo);
             this.panelSlideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSlideMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelSlideMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelSlideMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelSlideMenu.Name = "panelSlideMenu";
             this.panelSlideMenu.Size = new System.Drawing.Size(250, 553);
             this.panelSlideMenu.TabIndex = 0;
@@ -83,7 +83,8 @@
             this.btnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUsuario.FlatAppearance.BorderSize = 0;
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuario.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnUsuario.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuario.ForeColor = System.Drawing.Color.White;
             this.btnUsuario.Location = new System.Drawing.Point(0, 456);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -110,7 +111,8 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.LightGray;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(0, 40);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -126,7 +128,8 @@
             this.btnAltaVenta.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAltaVenta.FlatAppearance.BorderSize = 0;
             this.btnAltaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaVenta.ForeColor = System.Drawing.Color.LightGray;
+            this.btnAltaVenta.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaVenta.ForeColor = System.Drawing.Color.White;
             this.btnAltaVenta.Location = new System.Drawing.Point(0, 0);
             this.btnAltaVenta.Name = "btnAltaVenta";
             this.btnAltaVenta.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -142,7 +145,8 @@
             this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnVentas.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.Location = new System.Drawing.Point(0, 323);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -158,7 +162,8 @@
             this.btnObraSocial.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnObraSocial.FlatAppearance.BorderSize = 0;
             this.btnObraSocial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnObraSocial.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnObraSocial.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObraSocial.ForeColor = System.Drawing.Color.White;
             this.btnObraSocial.Location = new System.Drawing.Point(0, 278);
             this.btnObraSocial.Name = "btnObraSocial";
             this.btnObraSocial.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -185,7 +190,8 @@
             this.btnProductosVendidos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProductosVendidos.FlatAppearance.BorderSize = 0;
             this.btnProductosVendidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductosVendidos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnProductosVendidos.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductosVendidos.ForeColor = System.Drawing.Color.White;
             this.btnProductosVendidos.Location = new System.Drawing.Point(0, 40);
             this.btnProductosVendidos.Name = "btnProductosVendidos";
             this.btnProductosVendidos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -201,7 +207,8 @@
             this.btnAltaProducto.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAltaProducto.FlatAppearance.BorderSize = 0;
             this.btnAltaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaProducto.ForeColor = System.Drawing.Color.LightGray;
+            this.btnAltaProducto.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaProducto.ForeColor = System.Drawing.Color.White;
             this.btnAltaProducto.Location = new System.Drawing.Point(0, 0);
             this.btnAltaProducto.Name = "btnAltaProducto";
             this.btnAltaProducto.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -217,7 +224,8 @@
             this.btnProducto.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProducto.FlatAppearance.BorderSize = 0;
             this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducto.ForeColor = System.Drawing.Color.LightGray;
+            this.btnProducto.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProducto.ForeColor = System.Drawing.Color.White;
             this.btnProducto.Location = new System.Drawing.Point(0, 145);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -233,7 +241,8 @@
             this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnClientes.FlatAppearance.BorderSize = 0;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnClientes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.Location = new System.Drawing.Point(0, 100);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -315,9 +324,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(454, 100);
+            this.label1.Location = new System.Drawing.Point(466, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 51);
+            this.label1.Size = new System.Drawing.Size(171, 49);
             this.label1.TabIndex = 1;
             this.label1.Text = "GRUPO";
             // 
@@ -340,7 +349,7 @@
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSlideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "FrmPrincipal";
             this.Text = "Sistema Optica";

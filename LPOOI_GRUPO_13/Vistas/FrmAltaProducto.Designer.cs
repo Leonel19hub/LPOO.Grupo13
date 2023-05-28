@@ -52,6 +52,7 @@
             this.radioCategoria = new System.Windows.Forms.RadioButton();
             this.radioDescripcion = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnClean = new System.Windows.Forms.Button();
             this.panelSlideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducto)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +60,7 @@
             // panelSlideMenu
             // 
             this.panelSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.panelSlideMenu.Controls.Add(this.btnClean);
             this.panelSlideMenu.Controls.Add(this.txtPrecio);
             this.panelSlideMenu.Controls.Add(this.txtCategoria);
             this.panelSlideMenu.Controls.Add(this.txtDescripcion);
@@ -84,6 +86,8 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(224, 22);
             this.txtPrecio.TabIndex = 15;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // txtCategoria
             // 
@@ -360,6 +364,21 @@
             this.label6.TabIndex = 31;
             this.label6.Text = "Ordenar por: ";
             // 
+            // btnClean
+            // 
+            this.btnClean.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(39)))), ((int)(((byte)(73)))));
+            this.btnClean.FlatAppearance.BorderSize = 3;
+            this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClean.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnClean.Location = new System.Drawing.Point(249, 495);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(107, 34);
+            this.btnClean.TabIndex = 25;
+            this.btnClean.Text = "Limpiar";
+            this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
+            // 
             // FrmAltaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -408,6 +427,7 @@
         private System.Windows.Forms.RadioButton radioCategoria;
         private System.Windows.Forms.RadioButton radioDescripcion;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnClean;
 
     }
 }

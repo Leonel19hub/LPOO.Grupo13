@@ -56,18 +56,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(169, 39);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(169, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 48);
+            this.label1.Size = new System.Drawing.Size(154, 49);
             this.label1.TabIndex = 1;
             this.label1.Text = "Grupo";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(20, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(126, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -77,22 +77,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(40)))), ((int)(((byte)(99)))));
-            this.label2.Location = new System.Drawing.Point(116, 171);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(39)))), ((int)(((byte)(73)))));
+            this.label2.Location = new System.Drawing.Point(94, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(447, 76);
+            this.label2.Size = new System.Drawing.Size(511, 93);
             this.label2.TabIndex = 2;
             this.label2.Text = "BIENVENIDO";
             // 
             // txtNameUser
             // 
             this.txtNameUser.AutoSize = true;
-            this.txtNameUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameUser.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtNameUser.Location = new System.Drawing.Point(444, 270);
+            this.txtNameUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameUser.ForeColor = System.Drawing.Color.White;
+            this.txtNameUser.Location = new System.Drawing.Point(431, 270);
             this.txtNameUser.Name = "txtNameUser";
-            this.txtNameUser.Size = new System.Drawing.Size(138, 39);
+            this.txtNameUser.Size = new System.Drawing.Size(144, 39);
             this.txtNameUser.TabIndex = 2;
             this.txtNameUser.Text = "Nombre";
             // 
@@ -110,7 +110,7 @@
             // 
             this.progressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(40)))), ((int)(((byte)(99)))));
-            this.progressBar1.Location = new System.Drawing.Point(263, 350);
+            this.progressBar1.Location = new System.Drawing.Point(220, 350);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(560, 29);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;

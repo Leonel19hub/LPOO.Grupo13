@@ -34,22 +34,85 @@ namespace Vistas
 
         int codigoProducto;
 
+        //private void dataGridProducto_CurrentCellChanged(object sender, EventArgs e)
+        //{
+        //    if (dataGridProducto.SelectedRows.Count > 0)
+        //    {
+        //        codigoProducto = Convert.ToInt32(dataGridProducto.CurrentRow.Cells["Codigo"].Value.ToString());
+        //        txtNombre.Text = dataGridProducto.CurrentRow.Cells["Nombre"].Value.ToString();
+        //        txtCategoria.Text = dataGridProducto.CurrentRow.Cells["Categoria"].Value.ToString();
+        //        txtDescripcion.Text = dataGridProducto.CurrentRow.Cells["Descripcion"].Value.ToString();
+        //        txtPrecio.Text = dataGridProducto.CurrentRow.Cells["Precio"].Value.ToString();
+        //        btnAgregar.Enabled = false;
+
+        //    }
+        //    else
+        //        btnAgregar.Enabled = true;
+        //}
+
         private void dataGridProducto_CurrentCellChanged(object sender, EventArgs e)
         {
             if (dataGridProducto.SelectedRows.Count > 0)
             {
-                int idProducto = Convert.ToInt32(dataGridProducto.CurrentRow.Cells["Codigo"].Value);
-                txtNombre.Text = dataGridProducto.CurrentRow.Cells["Nombre"].Value.ToString();
-                txtCategoria.Text = dataGridProducto.CurrentRow.Cells["Categoria"].Value.ToString();
-                txtDescripcion.Text = dataGridProducto.CurrentRow.Cells["Descripcion"].Value.ToString();
-                txtPrecio.Text = dataGridProducto.CurrentRow.Cells["Precio"].Value.ToString();
-                btnAgregar.Enabled = false;
+                int columnIndexCodigo = dataGridProducto.Columns["Codigo"].Index;
+                int columnIndexNombre = dataGridProducto.Columns["Nombre"].Index;
+                int columnIndexCategoria = dataGridProducto.Columns["Categoria"].Index;
+                int columnIndexDescripcion = dataGridProducto.Columns["Descripcion"].Index;
+                int columnIndexPrecio = dataGridProducto.Columns["Precio"].Index;
 
-                codigoProducto = idProducto;
+                if (!Convert.IsDBNull(dataGridProducto.CurrentRow.Cells[columnIndexCodigo].Value))
+                {
+                    codigoProducto = Convert.ToInt32(dataGridProducto.CurrentRow.Cells[columnIndexCodigo].Value);
+                }
+                else
+                {
+                    codigoProducto = 0;
+                }
+
+                if (!Convert.IsDBNull(dataGridProducto.CurrentRow.Cells[columnIndexNombre].Value))
+                {
+                    txtNombre.Text = dataGridProducto.CurrentRow.Cells[columnIndexNombre].Value.ToString();
+                }
+                else
+                {
+                    txtNombre.Text = "";
+                }
+
+                if (!Convert.IsDBNull(dataGridProducto.CurrentRow.Cells[columnIndexCategoria].Value))
+                {
+                    txtCategoria.Text = dataGridProducto.CurrentRow.Cells[columnIndexCategoria].Value.ToString();
+                }
+                else
+                {
+                    txtCategoria.Text = "";
+                }
+
+                if (!Convert.IsDBNull(dataGridProducto.CurrentRow.Cells[columnIndexDescripcion].Value))
+                {
+                    txtDescripcion.Text = dataGridProducto.CurrentRow.Cells[columnIndexDescripcion].Value.ToString();
+                }
+                else
+                {
+                    txtDescripcion.Text = "";
+                }
+
+                if (!Convert.IsDBNull(dataGridProducto.CurrentRow.Cells[columnIndexPrecio].Value))
+                {
+                    txtPrecio.Text = dataGridProducto.CurrentRow.Cells[columnIndexPrecio].Value.ToString();
+                }
+                else
+                {
+                    txtPrecio.Text = "";
+                }
+
+                btnAgregar.Enabled = false;
             }
             else
+            {
                 btnAgregar.Enabled = true;
+            }
         }
+
 
         #region Operaciones ABM
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -189,6 +252,29 @@ namespace Vistas
         }
 
         #endregion
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter ingresado no es un número ni el punto decimal
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != '\b')
+            {
+                // Bloquear el carácter ingresado
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+            // Habilitar o deshabilitar el botón según si el texto es un número válido
+            decimal precio;
+            bool esNumero = decimal.TryParse(txtPrecio.Text, out precio);
+            btnAgregar.Enabled = esNumero && precio != 0;
+        }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            loadProductos();
+        }
 
     }
 }

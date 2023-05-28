@@ -188,6 +188,11 @@ namespace Vistas
         }
         #endregion
 
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            loadClientes();
+        }
+
         
     }
 }
