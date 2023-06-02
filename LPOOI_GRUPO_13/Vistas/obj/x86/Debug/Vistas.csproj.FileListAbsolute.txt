@@ -40,3 +40,8 @@ C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\obj\
 C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmPrincipal.resources
 C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
 C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\bin\Debug\Vistas.exe.manifest
+C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\bin\Debug\Vistas.application
+C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.exe.manifest
+C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.application
+C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.Frmprueba.resources
