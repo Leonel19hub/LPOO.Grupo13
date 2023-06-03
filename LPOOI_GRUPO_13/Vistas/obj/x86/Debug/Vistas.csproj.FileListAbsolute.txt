@@ -45,3 +45,29 @@ C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\bin\
 C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.exe.manifest
 C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.application
 C:\Users\GAMING\Desktop\Trabajo Practico N° 4 - LPOO\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.Frmprueba.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\bin\Debug\nuevaOptica.mdf
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\bin\Debug\nuevaOptica_log.ldf
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\bin\Debug\Vistas.exe.manifest
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\bin\Debug\Vistas.application
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\bin\Debug\Vistas.exe
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\bin\Debug\Vistas.pdb
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmAltaCliente.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmAltaObraSocial.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmAltaProducto.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmAltaVenta.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmAmbUsuario.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmBienvenida.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmComprasCliente.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmDetalleVentaProducto.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmLogin.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmPrincipal.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.Frmprueba.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.exe.manifest
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.application
