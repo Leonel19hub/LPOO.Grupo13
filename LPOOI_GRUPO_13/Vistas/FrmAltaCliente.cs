@@ -193,6 +193,42 @@ namespace Vistas
             loadClientes();
         }
 
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto actual del TextBox
+            string texto = txtDni.Text;
+
+            // Verificar si el texto contiene caracteres que no son números
+            foreach (char c in texto)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Si se encuentra un carácter no numérico, eliminarlo del texto
+                    txtDni.Text = txtDni.Text.Replace(c.ToString(), string.Empty);
+                    // Establecer la posición del cursor al final del texto
+                    txtDni.SelectionStart = txtDni.TextLength;
+                }
+            }
+        }
+
+        private void txtNroCarnet_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto actual del TextBox
+            string texto = txtNroCarnet.Text;
+
+            // Verificar si el texto contiene caracteres que no son números
+            foreach (char c in texto)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Si se encuentra un carácter no numérico, eliminarlo del texto
+                    txtNroCarnet.Text = txtNroCarnet.Text.Replace(c.ToString(), string.Empty);
+                    // Establecer la posición del cursor al final del texto
+                    txtNroCarnet.SelectionStart = txtNroCarnet.TextLength;
+                }
+            }
+        }
+
 
         
     }

@@ -225,5 +225,10 @@ namespace Vistas
         {
             load_usuarios_sp();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridUser.DataSource = TrabajarProducto.ordenarClientesApellido();
+        }
     }
 }

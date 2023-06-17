@@ -10,7 +10,7 @@
   <Class Name="ClasesBase.ObraSocial" Collapsed="true">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAQAIAAEAACAAIAAgACAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAQAIAAEAAiAAIAIgACAAA=</HashCode>
       <FileName>ObraSocial.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -31,7 +31,7 @@
   <Class Name="ClasesBase.Usuario" Collapsed="true">
     <Position X="2.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAEAAAAAAEAAAABAAgAAACCAAAAAAAABAAAAASA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAEAAAABAAgAAACCAAgAAAAIBAAAAASA=</HashCode>
       <FileName>Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -47,6 +47,13 @@
     <TypeIdentifier>
       <HashCode>gIAAAAAQAAAAAAAAAIAgAAAAIEAAAABAABwAAIAMAAA=</HashCode>
       <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBase.Usuario2" Collapsed="true">
+    <Position X="5.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAgAAAEAAAAAAABAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Usuario2.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

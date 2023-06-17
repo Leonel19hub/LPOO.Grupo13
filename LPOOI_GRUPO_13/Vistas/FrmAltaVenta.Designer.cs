@@ -338,6 +338,7 @@
             this.Controls.Add(this.panelSlideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAltaVenta";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "AltaVenta";
             this.Load += new System.EventHandler(this.FrmAltaVenta_Load);
             this.panelSlideMenu.ResumeLayout(false);

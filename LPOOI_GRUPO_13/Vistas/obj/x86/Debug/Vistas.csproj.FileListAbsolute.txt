@@ -71,3 +71,4 @@ C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.Prop
 C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
 C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.exe.manifest
 C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.application
+C:\Users\GAMING\Desktop\Grupo 13\LPOOI_GRUPO_13\Vistas\obj\x86\Debug\Vistas.FrmPractica.resources
