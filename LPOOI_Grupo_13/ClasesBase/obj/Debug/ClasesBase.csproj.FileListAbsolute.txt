@@ -12,3 +12,4 @@ C:\Users\GAMING\Desktop\Tp Final LPOO\LPOOI_Grupo_13\ClasesBase\bin\Debug\Clases
 C:\Users\GAMING\Desktop\Tp Final LPOO\LPOOI_Grupo_13\ClasesBase\bin\Debug\ClasesBase.pdb
 C:\Users\GAMING\Desktop\Tp Final LPOO\LPOOI_Grupo_13\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\GAMING\Desktop\Tp Final LPOO\LPOOI_Grupo_13\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\GAMING\Desktop\Tp Final LPOO\LPOOI_Grupo_13\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
