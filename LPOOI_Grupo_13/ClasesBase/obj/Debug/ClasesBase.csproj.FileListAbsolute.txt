@@ -1,0 +1,7 @@
+C:\Users\GAMING\Desktop\Optica Sistema\LPOOI_Grupo_13\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\GAMING\Desktop\Optica Sistema\LPOOI_Grupo_13\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\GAMING\Desktop\Optica Sistema\LPOOI_Grupo_13\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\GAMING\Desktop\Optica Sistema\LPOOI_Grupo_13\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\GAMING\Desktop\Optica Sistema\LPOOI_Grupo_13\ClasesBase\bin\Debug\sistemaOptica.mdf
+C:\Users\GAMING\Desktop\Optica Sistema\LPOOI_Grupo_13\ClasesBase\bin\Debug\sistemaOptica_log.ldf
+C:\Users\GAMING\Desktop\Optica Sistema\LPOOI_Grupo_13\ClasesBase\bin\Debug\ClasesBase.dll.config
