@@ -101,8 +101,14 @@ namespace Vistas
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            dataGridObraSocial.DataSource = TrabajarObraSocial.eliminarObraSocial(idCuit);
-            load_obrasocial();
+            // Mostrar MessageBox de confirmación
+            DialogResult result = MessageBox.Show("¿Está seguro de eliminar esta obra social?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Continuar con la eliminación de la obra social
+                dataGridObraSocial.DataSource = TrabajarObraSocial.eliminarObraSocial(idCuit);
+                load_obrasocial();
+            }
         }
 
         private void dataGridObraSocial_CurrentCellChanged(object sender, EventArgs e)
@@ -247,18 +253,6 @@ namespace Vistas
         {
             btnBuscarClientes.BackColor = Color.FromArgb(23, 21, 32);
             btnBuscarClientes.ForeColor = Color.FromArgb(224, 224, 224);
-        }
-
-        private void btnBuscar_MouseEnter(object sender, EventArgs e)
-        {
-            btnBuscar.BackColor = Color.FromArgb(186, 39, 73);
-            btnBuscar.ForeColor = Color.FromArgb(23, 21, 32);
-        }
-
-        private void btnBuscar_MouseLeave(object sender, EventArgs e)
-        {
-            btnBuscar.BackColor = Color.FromArgb(23, 21, 32);
-            btnBuscar.ForeColor = Color.FromArgb(224, 224, 224);
         }
 
         private void btnClean_MouseEnter(object sender, EventArgs e)

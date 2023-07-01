@@ -46,8 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataCompras = new System.Windows.Forms.DataGridView();
             this.lbCantidad = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.cmbDelete = new System.Windows.Forms.ComboBox();
             this.panelSlideMenu.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -242,7 +240,7 @@
             this.dataCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataCompras.EnableHeadersVisualStyles = false;
             this.dataCompras.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(71)))), ((int)(((byte)(106)))));
-            this.dataCompras.Location = new System.Drawing.Point(19, 225);
+            this.dataCompras.Location = new System.Drawing.Point(96, 225);
             this.dataCompras.Name = "dataCompras";
             this.dataCompras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -262,6 +260,8 @@
             this.dataCompras.RowTemplate.Height = 24;
             this.dataCompras.Size = new System.Drawing.Size(873, 269);
             this.dataCompras.TabIndex = 32;
+            this.dataCompras.CurrentCellChanged += new System.EventHandler(this.dataCompras_CurrentCellChanged);
+            this.dataCompras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataCompras_KeyDown);
             // 
             // lbCantidad
             // 
@@ -273,39 +273,12 @@
             this.lbCantidad.Size = new System.Drawing.Size(0, 19);
             this.lbCantidad.TabIndex = 21;
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(39)))), ((int)(((byte)(73)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 3;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnEliminar.Location = new System.Drawing.Point(930, 376);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(110, 40);
-            this.btnEliminar.TabIndex = 24;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // cmbDelete
-            // 
-            this.cmbDelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.cmbDelete.FormattingEnabled = true;
-            this.cmbDelete.Location = new System.Drawing.Point(909, 312);
-            this.cmbDelete.Name = "cmbDelete";
-            this.cmbDelete.Size = new System.Drawing.Size(137, 24);
-            this.cmbDelete.TabIndex = 33;
-            // 
             // FrmComprasCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1064, 506);
-            this.Controls.Add(this.cmbDelete);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lbCantidad);
             this.Controls.Add(this.dataCompras);
             this.Controls.Add(this.panelSlideMenu);
@@ -342,7 +315,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataCompras;
         private System.Windows.Forms.Label lbCantidad;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.ComboBox cmbDelete;
     }
 }

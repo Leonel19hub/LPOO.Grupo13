@@ -16,6 +16,14 @@ namespace Vistas
         {
             InitializeComponent();
             loadClientes();
+            load_combo_obraSocial();
+        }
+
+        private void load_combo_obraSocial()
+        {
+            cmbObraSocial.DisplayMember = "OS_CUIT";
+            cmbObraSocial.ValueMember = "OS_CUIT";
+            cmbObraSocial.DataSource = TrabajarCliente.list_obraSocial();
         }
 
         public void loadClientes()
@@ -25,7 +33,6 @@ namespace Vistas
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtDireccion.Text = "";
-            txtCuit.Text = "";
             txtNroCarnet.Text = "";
         }
 
@@ -50,7 +57,7 @@ namespace Vistas
                 oCliente.Cli_Apellido = txtApellido.Text;
                 oCliente.Cli_Nombre = txtNombre.Text;
                 oCliente.Cli_Direccion = txtDireccion.Text;
-                oCliente.Os_CUIT = txtCuit.Text;
+                oCliente.Os_CUIT = cmbObraSocial.SelectedValue.ToString(); ;
                 oCliente.Cli_NroCarnet = txtNroCarnet.Text;
 
                 TrabajarCliente.guardarCliente(oCliente);
@@ -65,7 +72,7 @@ namespace Vistas
             oCliente.Cli_Apellido = txtApellido.Text;
             oCliente.Cli_Nombre = txtNombre.Text;
             oCliente.Cli_Direccion = txtDireccion.Text;
-            oCliente.Os_CUIT = txtCuit.Text;
+            oCliente.Os_CUIT = cmbObraSocial.SelectedValue.ToString(); ;
             oCliente.Cli_NroCarnet = txtNroCarnet.Text;
 
             dataGridCliente.DataSource = TrabajarCliente.modificarCliente(oCliente);
@@ -98,7 +105,7 @@ namespace Vistas
                 txtApellido.Text = dataGridCliente.CurrentRow.Cells["Apellido"].Value.ToString();
                 txtNombre.Text = dataGridCliente.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtDireccion.Text = dataGridCliente.CurrentRow.Cells["Direccion"].Value.ToString();
-                txtCuit.Text = dataGridCliente.CurrentRow.Cells["CUIT"].Value.ToString();
+                cmbObraSocial.Text = dataGridCliente.CurrentRow.Cells["CUIT"].Value.ToString();
                 txtNroCarnet.Text = dataGridCliente.CurrentRow.Cells["N° Carnet"].Value.ToString();
                 btnAgregar.Enabled = false;
             }
@@ -114,7 +121,7 @@ namespace Vistas
             txtApellido.TextChanged += CamposTextChanged;
             txtNombre.TextChanged += CamposTextChanged;
             txtDireccion.TextChanged += CamposTextChanged;
-            txtCuit.TextChanged += CamposTextChanged;
+            cmbObraSocial.TextChanged += CamposTextChanged;
             txtNroCarnet.TextChanged += CamposTextChanged;
 
             // Deshabilitar el botón inicialmente
@@ -122,7 +129,7 @@ namespace Vistas
 
             // Suscribirse al evento "KeyPress" de los TextBox
             txtDni.KeyPress += SoloNumerosKeyPress;
-            txtCuit.KeyPress += SoloNumerosKeyPress;
+            cmbObraSocial.KeyPress += SoloNumerosKeyPress;
             txtNroCarnet.KeyPress += SoloNumerosKeyPress;
 
             // Suscribirse al evento "KeyPress" de los TextBox
@@ -137,7 +144,7 @@ namespace Vistas
                                     string.IsNullOrEmpty(txtApellido.Text) ||
                                     string.IsNullOrEmpty(txtNombre.Text) ||
                                     string.IsNullOrEmpty(txtDireccion.Text) ||
-                                    string.IsNullOrEmpty(txtCuit.Text) ||
+                                    string.IsNullOrEmpty(cmbObraSocial.Text) ||
                                     string.IsNullOrEmpty(txtNroCarnet.Text);
 
             // Habilitar o deshabilitar el botón según el estado de los campos
@@ -293,7 +300,7 @@ namespace Vistas
             }
 
             // Verificar la longitud del texto después de ingresar el valor
-            if (txtCuit.Text.Length >= 11 && e.KeyChar != '\b')
+            if (cmbObraSocial.Text.Length >= 11 && e.KeyChar != '\b')
             {
                 e.Handled = true; // Ignorar la tecla presionada
             }

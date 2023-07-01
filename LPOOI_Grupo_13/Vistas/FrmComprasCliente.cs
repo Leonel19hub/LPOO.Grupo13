@@ -17,7 +17,6 @@ namespace Vistas
         {
             InitializeComponent();
             dtFechaFinal.Value = DateTime.Today.AddDays(1);
-            btnEliminar.Enabled = false;
         }
 
         private void load_clientes()
@@ -42,27 +41,13 @@ namespace Vistas
             {
                 dataCompras.DataSource = dataTableCompras;
                 int cantidadFilas = dataTableCompras.Rows.Count;
-                loadCmdDelete();
                 lbCantidad.Text = "Se encontraron un total de " + cantidadFilas + " resultados";
-                btnEliminar.Enabled = true;
             }
             else
             {
                 dataCompras.DataSource = null; // No hay datos, asignar null al DataSource
                 lbCantidad.Text = "No se encontraron resultados";
             }
-        }
-
-        public void loadCmdDelete() {
-            // Asignar el DataTable como origen de datos del ComboBox
-            cmbDelete.DataSource = cmbListado;
-
-            // Establecer el campo que se mostrará en el ComboBox
-            cmbDelete.DisplayMember = "N° Venta";
-
-            // Establecer el valor seleccionado en el ComboBox
-            cmbDelete.ValueMember = "N° Venta";
-
         }
 
         private void btnBuscarFechas_Click(object sender, EventArgs e)
@@ -75,9 +60,7 @@ namespace Vistas
             {
                 dataCompras.DataSource = dataTableVentas;
                 int cantidadFilas = dataTableVentas.Rows.Count;
-                loadCmdDelete();
                 lbCantidad.Text = "Se encontraron un total de " + cantidadFilas + " resultados";
-                btnEliminar.Enabled = true;
             }
             else
             {
@@ -131,60 +114,39 @@ namespace Vistas
 
         #endregion
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        Venta deleteVenta = new Venta();
+        private void dataCompras_CurrentCellChanged(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado una venta
-            if (cmbDelete.SelectedItem == null)
+            if (dataCompras.CurrentRow != null && dataCompras.SelectedRows.Count > 0)
             {
-                MessageBox.Show("No se ha seleccionado una venta para eliminar.", "Eliminar Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                deleteVenta.Ven_Nro = Convert.ToInt32(dataCompras.CurrentRow.Cells["N° Venta"].Value.ToString());
+                deleteVenta.Ven_Fecha = Convert.ToDateTime(dataCompras.CurrentRow.Cells["Fecha"].Value);
+                deleteVenta.Cli_ID = Convert.ToInt32(dataCompras.CurrentRow.Cells["ID Cliente"].Value.ToString());
             }
+        }
 
-            // Obtener el número de venta seleccionado
-            int ventaNro = Convert.ToInt32(cmbDelete.SelectedValue);
-
-            // Buscar la fila correspondiente al número de venta en el DataTable cmbListado
-            DataRow[] rows = cmbListado.Select("[N° Venta] = " + ventaNro);
-
-            // Verificar si se encontró la fila y obtener los datos adicionales
-            if (rows.Length > 0)
+        private void dataCompras_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) // Verifica si se ha presionado la tecla "Suprimir"
             {
-                DataRow ventaSeleccionada = rows[0];
-                string fechaVenta = ventaSeleccionada["Fecha"].ToString();
-
-                // Mostrar cuadro de diálogo de confirmación
-                string mensaje = "¿Estás seguro de que deseas eliminar la venta " + ventaNro + " realizada el " + fechaVenta + "?";
-                DialogResult result = MessageBox.Show(mensaje, "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
+                if (dataCompras.SelectedRows.Count > 0)
                 {
-                    // Eliminar la venta
-                    TrabajarVenta.eliminarVenta(ventaNro);
+                    // Obtener los datos de la venta antes de eliminarla
+                    int ventaNro = Convert.ToInt32(dataCompras.CurrentRow.Cells["N° Venta"].Value.ToString());
+                    DataTable dtVenta = TrabajarVenta.buscarVenta(ventaNro);
 
-                    // Actualizar la fuente de datos del ComboBox cmbDelete
-                    if (ultimoBotonPresionado == "Cliente")
-                    {
-                        cmbListado = TrabajarVenta.listar_compras_cliente_sp(Convert.ToInt32(cmdClientes.SelectedValue));
-                    }
-                    else if (ultimoBotonPresionado == "Fechas")
-                    {
-                        cmbListado = TrabajarVenta.listar_ventas_entre_fechas_sp(dtFechaInicio.Value, dtFechaFinal.Value);
-                    }
-                    cmbDelete.DataSource = cmbListado;
-                    cmbDelete.DisplayMember = "N° Venta";
-                    cmbDelete.ValueMember = "N° Venta";
+                    // Mostrar MessageBox con los datos y solicitar confirmación
+                    DialogResult result = MessageBox.Show("¿Estás seguro de eliminar la venta?\n\nDatos de la venta:\n" + 
+                        "\nN° Venta: " +deleteVenta.Ven_Nro +
+                        "\nFecha: " + deleteVenta.Ven_Fecha +
+                        "\nID Cliente: " + deleteVenta.Cli_ID, "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    // Actualizar la fuente de datos y refrescar el DataGridView
-                    if (ultimoBotonPresionado == "Cliente")
+                    if (result == DialogResult.Yes)
                     {
-                        dataCompras.DataSource = TrabajarVenta.listar_compras_cliente_sp(Convert.ToInt32(cmdClientes.SelectedValue));
+                        // Eliminar la venta
+                        TrabajarVenta.eliminarVenta(ventaNro);
+                        deleteVenta = new Venta();
                     }
-                    else if (ultimoBotonPresionado == "Fechas")
-                    {
-                        dataCompras.DataSource = TrabajarVenta.listar_ventas_entre_fechas_sp(dtFechaInicio.Value, dtFechaFinal.Value);
-                    }
-
-                    dataCompras.Refresh();
                 }
             }
         }

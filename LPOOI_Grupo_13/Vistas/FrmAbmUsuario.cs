@@ -60,16 +60,28 @@ namespace Vistas
                 return; // Salir del método sin insertar el usuario
             }
 
-            // Si todos los campos tienen datos, proceder con la inserción del usuario
-            Usuario user = new Usuario();
+            // Verificar si el username ya está registrado
+            if (TrabajarUsuario.usuario_existe(txtUsername.Text))
+            {
+                MessageBox.Show("El nombre de usuario ya está registrado.", "Nombre de usuario duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Salir del método sin insertar el usuario
+            }
 
-            user.Rol_Codigo = Convert.ToInt32(cmbRol.SelectedValue.ToString());
-            user.Usu_Username = txtUsername.Text;
-            user.Usu_contraseña = txtPassword.Text;
-            user.Usu_ApellidoNombre = txtNyA.Text;
+            // Mostrar MessageBox de confirmación
+            DialogResult result = MessageBox.Show("¿Está seguro de agregar este usuario?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Si el usuario confirmó, proceder con la inserción del usuario
+                Usuario user = new Usuario();
 
-            TrabajarUsuario.insertar_usuario(user);
-            load_usuarios();
+                user.Rol_Codigo = Convert.ToInt32(cmbRol.SelectedValue.ToString());
+                user.Usu_Username = txtUsername.Text;
+                user.Usu_contraseña = txtPassword.Text;
+                user.Usu_ApellidoNombre = txtNyA.Text;
+
+                TrabajarUsuario.insertar_usuario(user);
+                load_usuarios();
+            }
         }
 
         private void FrmAbmUsuario_Load(object sender, EventArgs e)
@@ -119,9 +131,14 @@ namespace Vistas
                 }
             }
 
-            // Continuar con la eliminación del usuario
-            dataGridUser.DataSource = TrabajarUsuario.eliminar_usuario(idUser);
-            load_usuarios();
+            // Mostrar MessageBox de confirmación
+            DialogResult result = MessageBox.Show("¿Está seguro de eliminar este usuario?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Continuar con la eliminación del usuario
+                dataGridUser.DataSource = TrabajarUsuario.eliminar_usuario(idUser);
+                load_usuarios();
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

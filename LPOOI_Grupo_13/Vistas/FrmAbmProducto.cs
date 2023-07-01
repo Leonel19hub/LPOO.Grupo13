@@ -82,8 +82,14 @@ namespace Vistas
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            dataGridProducto.DataSource = TrabajarProducto.eliminarProducto(codigoProducto);
-            loadProductos();
+            // Mostrar MessageBox de confirmación
+            DialogResult result = MessageBox.Show("¿Está seguro de eliminar este producto?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Continuar con la eliminación del producto
+                dataGridProducto.DataSource = TrabajarProducto.eliminarProducto(codigoProducto);
+                loadProductos();
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

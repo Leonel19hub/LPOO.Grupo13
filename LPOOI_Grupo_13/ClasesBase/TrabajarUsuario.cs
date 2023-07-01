@@ -136,5 +136,24 @@ namespace ClasesBase
             return dt;
 
         }
+
+        public static bool usuario_existe(string username)
+        {
+            using (SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.sistemaOpticaConnectionString))
+            {
+                cnn.Open();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT COUNT(*) FROM Usuario WHERE Usu_Username = @Username";
+                cmd.Parameters.AddWithValue("@Username", username);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return count > 0;
+            }
+        }
+
     }
 }

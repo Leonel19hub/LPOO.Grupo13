@@ -127,5 +127,21 @@ namespace ClasesBase
             da.Fill(dt);
             return dt;
         }
+
+        public static DataTable list_obraSocial()
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.sistemaOpticaConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT *,(OS_CUIT) AS NAME FROM ObraSocial";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+
+        }
     }
 }

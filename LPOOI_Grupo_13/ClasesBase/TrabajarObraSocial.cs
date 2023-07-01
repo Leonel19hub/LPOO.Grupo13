@@ -31,7 +31,6 @@ namespace ClasesBase
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
             cmd.CommandText = "guardarObraSocial";
-            cmd.Parameters.AddWithValue("@nombre", oObraSocial.Os_Nombre);
             cmd.Parameters.AddWithValue("@cuit", oObraSocial.Os_Cuit);
             cmd.Parameters.AddWithValue("@razonsocial", oObraSocial.Os_RazonSocial);
             cmd.Parameters.AddWithValue("@direccion", oObraSocial.Os_Direccion);
@@ -116,5 +115,7 @@ namespace ClasesBase
 
             return dt;
         }
+
+        
     }
 }

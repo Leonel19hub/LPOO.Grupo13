@@ -47,8 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridObraSocial = new System.Windows.Forms.DataGridView();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.cmbObraSocial = new System.Windows.Forms.ComboBox();
             this.btnBuscarClientes = new System.Windows.Forms.Button();
             this.lbCantidad = new System.Windows.Forms.Label();
@@ -298,31 +296,6 @@
             this.dataGridObraSocial.TabIndex = 25;
             this.dataGridObraSocial.CurrentCellChanged += new System.EventHandler(this.dataGridObraSocial_CurrentCellChanged);
             // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscar.Location = new System.Drawing.Point(399, 477);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(516, 22);
-            this.txtBuscar.TabIndex = 32;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(39)))), ((int)(((byte)(73)))));
-            this.btnBuscar.FlatAppearance.BorderSize = 3;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnBuscar.Location = new System.Drawing.Point(932, 469);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(107, 40);
-            this.btnBuscar.TabIndex = 31;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.MouseEnter += new System.EventHandler(this.btnBuscar_MouseEnter);
-            this.btnBuscar.MouseLeave += new System.EventHandler(this.btnBuscar_MouseLeave);
-            // 
             // cmbObraSocial
             // 
             this.cmbObraSocial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -370,8 +343,6 @@
             this.Controls.Add(this.lbCantidad);
             this.Controls.Add(this.btnBuscarClientes);
             this.Controls.Add(this.cmbObraSocial);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dataGridObraSocial);
             this.Controls.Add(this.panelSlideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -404,8 +375,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridObraSocial;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox cmbObraSocial;
         private System.Windows.Forms.Button btnBuscarClientes;
         private System.Windows.Forms.Label lbCantidad;

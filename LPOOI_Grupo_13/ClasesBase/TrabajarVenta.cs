@@ -179,5 +179,22 @@ namespace ClasesBase
             da.Fill(dt);
             return dt;
         }
+
+        public static DataTable buscarVenta(int venNro)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.sistemaOpticaConnectionString);
+            cnn.Open();
+            SqlCommand cmd = cnn.CreateCommand();
+            cmd.CommandText = "buscarVenta";
+            cmd.CommandType = CommandType.StoredProcedure;
+            //Parametro de entrada
+            cmd.Parameters.AddWithValue("@venNro", venNro);
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
     }
 }
